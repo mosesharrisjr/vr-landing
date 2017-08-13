@@ -1,0 +1,44 @@
+@import 'Config/styles/colors';
+
+.navBar{
+  background: $dark-grey;
+  color: $white;
+  padding: 0 0 0 16px;
+
+  .mobile{
+    visibility: hidden;
+  }
+
+  .desktop{
+
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .contentLeft{
+      display: flex;
+    }
+
+    .contentRight{
+      display: flex;
+    }
+
+    ul {
+      > li {
+
+      }
+    }
+  }
+
+  @media (max-width: 700px){
+    .mobile{
+      visibility: visible;
+    }
+    .desktop{
+      visibility: hidden;
+    }
+  }
+
+}
