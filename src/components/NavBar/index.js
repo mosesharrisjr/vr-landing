@@ -1,16 +1,41 @@
 import React from 'react';
 import styles from './styles.scss'
 
+import BaseComponent from '../../../custom_modules/react-base';
 
-const menuItems = {
+const menuItems = [
+  {
+    url: '',
+    image: 'linkedin.svg',
+    content: null,
+  },
+  {
+    url: '',
+    image: 'facebook.svg',
+    content: null,
+  },
+  {
+    url: '',
+    image: 'twitter.svg',
+    content: null,
+  },
+  {
+    url: '',
+    image: null,
+    content: 'Contact Us',
+  }
+];
 
-}
 
-
-class NavBar extends React.Component {
+class NavBar extends BaseComponent {
 
   constructor(props) {
     super(props);
+    this._bind('handleClick');
+  }
+
+  handleClick(){
+
   }
 
   render(){
@@ -25,7 +50,19 @@ class NavBar extends React.Component {
           </div>
           <div className={styles.contentRight}>
             <ul>
-
+              {
+                menuItems.map(item => {
+                  return(
+                    <li><a onClick={this.handleClick}>
+                      {item.image &&
+                        <img src={'images/' + item.image} />
+                      }
+                      {item.content &&
+                      item.content
+                      }
+                      </a></li>
+                  );
+                })}
             </ul>
           </div>
 

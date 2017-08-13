@@ -1,16 +1,17 @@
 @import 'Config/styles/colors';
+@import 'Config/styles/easings';
 
 .navBar{
   background: $dark-grey;
   color: $white;
   padding: 0 0 0 16px;
+  font-size: 22px;
 
   .mobile{
     visibility: hidden;
   }
 
   .desktop{
-
     height: 60px;
     width: 100%;
     display: flex;
@@ -19,6 +20,10 @@
 
     .contentLeft{
       display: flex;
+      img {
+        transition:
+          width 200ms $ease-out-expo;
+      }
     }
 
     .contentRight{
@@ -26,8 +31,14 @@
     }
 
     ul {
-      > li {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
 
+      > li {
+        margin-right: 22px;
+        display: flex;
+        cursor: pointer;
       }
     }
   }
@@ -38,6 +49,7 @@
     }
     .desktop{
       visibility: hidden;
+
     }
   }
 

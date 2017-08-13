@@ -5,17 +5,20 @@ module.exports = {
   entry: __dirname + '/src/index.js',
   output: {
     path: __dirname + '/public/lib',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/lib',
   },
   resolve: {
-    src: [
+    modules: [
+      'node_modules',
+      resolve(__dirname, 'custom_modules'),
       resolve(__dirname, 'src'),
       resolve(__dirname, 'config'),
     ],
     alias: {
-      Source: resolve(__dirname, 'src'),
+      Modules: resolve(__dirname, 'src'),
       Config: resolve(__dirname, 'config'),
-    }
+    },
   },
   module: {
     rules: [
