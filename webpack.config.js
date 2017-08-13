@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 let webpack = require('webpack');
 
 module.exports = {
@@ -5,6 +6,16 @@ module.exports = {
   output: {
     path: __dirname + '/public/lib',
     filename: 'bundle.js'
+  },
+  resolve: {
+    src: [
+      resolve(__dirname, 'src'),
+      resolve(__dirname, 'config'),
+    ],
+    alias: {
+      Source: resolve(__dirname, 'src'),
+      Config: resolve(__dirname, 'config'),
+    }
   },
   module: {
     rules: [
