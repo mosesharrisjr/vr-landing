@@ -51,9 +51,9 @@ class NavBar extends BaseComponent {
           <div className={styles.contentRight}>
             <ul>
               {
-                menuItems.map(item => {
+                menuItems.map((item,index) => {
                   return(
-                    <li><a onClick={this.handleClick}>
+                    <li key={index}><a onClick={this.handleClick}>
                       {item.image &&
                         <img src={'images/' + item.image} />
                       }
