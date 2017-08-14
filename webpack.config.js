@@ -8,6 +8,13 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/lib',
   },
+  // plugins: [
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     compress: {
+  //         warnings: false
+  //     }
+  //   })
+  // ],
   resolve: {
     modules: [
       'node_modules',

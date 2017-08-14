@@ -1,5 +1,8 @@
 import React from 'react';
 import NavBar from '../../components/NavBar';
+import Home from  '../Home';
+
+import styles from './styles.scss';
 
 class App extends React.Component {
 
@@ -9,8 +12,9 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className={styles.content}>
         <NavBar />
+        <Home />
       </div>
     );
   }
