@@ -1,0 +1,66 @@
+@import 'Config/styles/colors';
+@import 'Config/styles/easings';
+
+.footer{
+  background: $darker-grey;
+  color: $white;
+  display: flex;
+  width: 100%;
+
+  .mobile{
+    display: flex;
+  }
+
+  .desktop{
+    width: 100%;
+    display: flex;
+
+    .content{
+      padding: 40px 115px 40px 115px;
+      display: flex;
+      max-width: 1400px;
+      margin: auto;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      .logos{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 35px;
+
+        .logo {
+          display: flex;
+        }
+      }
+
+      .policy{
+        font-size: 17px;
+        display: block;
+        display: flex;
+        justify-content: center;
+      }
+
+    }
+
+  }
+
+  $mobile-width: 700px;
+
+  @media (max-width: $mobile-width){
+    .desktop{
+      display: none;
+    }
+  }
+
+  @media (min-width: $mobile-width){
+    .mobile{
+      display: none;
+    }
+  }
+
+
+
+}

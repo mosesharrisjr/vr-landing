@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './styles.scss';
 
+import Video from '../../components/Video';
+
+import BaseComponent from '../../../custom_modules/react-base';
+
 const data = {
     watch: [
       {
@@ -19,13 +23,35 @@ const data = {
       description: 'Simply view the story and click to navigate. ',
       },
     ],
+    videos: [
+      {
+        title: 'Accelerate Change',
+        description: 'Otto Motors designs and manufactures autonomous robotic solutions for industrial use. See how Dell Technologies is facilitating the necessary communications signals for their self-driving vehicles.',
+        background: 'otto.jpg'
+      },
+      {
+        title: 'Swim with Whales',
+        description: 'Adrian Grenier partnered with Dell Technologies to create a VR experience that transports viewers into the depths of the sea to draw awareness to how pollution has disrupted underwater life.',
+        background: 'whales.jpg'
+      },
+      {
+        title: 'Rock Out Backstage',
+        description: 'The longest-running music television series, Austin City Limits is shot at the ACL Moody Theater and powered by Dell Technologies. Go behind the scenes of this cutting-edge music venue.',
+        background: 'rockout.jpg'
+      },
+    ]
 
 }
 
-class Home extends React.Component {
+class Home extends BaseComponent {
 
   constructor(props) {
     super(props);
+    this._bind('videoHandler')
+  }
+
+  videoHandler(){
+
   }
 
   render() {
@@ -58,6 +84,17 @@ class Home extends React.Component {
               );
             })}
           </div>
+        </div>
+        {data.videos.map((item,index) =>{
+          return(
+            <Video data={item} handler={this.videoHandler}/>
+          );
+        })}
+        <div className={styles.learnWrapper}>
+            <div className={styles.link}>
+              <div className={styles.icon}>›</div>
+              <div className={styles.cta}>Learn More</div>
+            </div>
         </div>
       </div>
     );
