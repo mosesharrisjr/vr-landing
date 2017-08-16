@@ -87,7 +87,7 @@ class Home extends BaseComponent {
         </div>
         {data.videos.map((item,index) =>{
           return(
-            <Video data={item} handler={this.videoHandler}/>
+            <Video key={index} data={item} handler={this.videoHandler}/>
           );
         })}
         <div className={styles.learnWrapper}>

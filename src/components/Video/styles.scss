@@ -1,13 +1,57 @@
 @import 'Config/styles/colors';
 @import 'Config/styles/easings';
 
-.section{
+.videoSection{
   background: $darker-grey;
   height: 472px;
   color: $white;
   display: flex;
   width: 100%;
+  position: relative;
+  justify-content: center;
 
+
+  .playButton {
+    display: flex;
+    margin-right: 8%;
+
+    position: absolute;
+    align-self: center;
+  }
+
+  .blurb{
+    display: flex;
+    font-weight: 300;
+    background: rgba($dark-grey,.6);
+    width: 25%;
+    max-width: 305px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    padding: 0 100px 0 100px;
+
+    justify-content: center;
+    align-items: center;
+
+    .content{
+      border-left: solid 1px $white;
+      padding: 20px 0 20px 40px;
+      min-width: 270px;
+      display: flex;
+      flex-direction: column;
+
+      .title{
+        font-size: 30px;
+        margin-bottom: 40px;
+      }
+
+      .description{
+        font-size: 20px;
+      }
+
+    }
+
+  }
 
   $mobile-width: 700px;
 

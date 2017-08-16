@@ -13,7 +13,16 @@ class Video extends BaseComponent {
 
   render(){
     return(
-      <div className={styles.section}>
+      <div className={styles.videoSection} style={{ background: " url(images/videoStills/" + this.props.data.background + ")"}}>
+        <div className={styles.playButton}>
+          <img src="images/playButton.svg"/>
+        </div>
+        <div className={styles.blurb}>
+            <div className={styles.content}>
+              <div className={styles.title}>{this.props.data.title}</div>
+              <div className={styles.description}>{this.props.data.description}</div>
+            </div>
+        </div>
 
       </div>
     );

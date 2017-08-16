@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="545 -1954 1440 4108" style="enable-background:new 545 -1954 1440 4108;" xml:space="preserve">
-<polygon id="Triangle" style="opacity:0.75;fill:#D8D8D8;stroke:#979797;enable-background:new    ;" points="1297.735,-26.792 
-	1254.361,-5.105 1254.361,-48.479 "/>
-<circle id="Oval" style="opacity:0.7535;fill:none;stroke:#D8D8D8;stroke-width:6;enable-background:new    ;" cx="1269" cy="-26.25" r="45"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="97px" viewBox="0 0 96 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>playButton</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="playButton" transform="translate(3.000000, 3.000000)">
+            <polygon id="Triangle" fill="#D8D8D8" fill-rule="nonzero" opacity="0.75" points="73.735 45.208 30.361 66.895 30.361 23.521"></polygon>
+            <circle id="Oval" stroke="#D8D8D8" stroke-width="6" opacity="0.7535" cx="45" cy="45.75" r="45"></circle>
+        </g>
+    </g>
 </svg>

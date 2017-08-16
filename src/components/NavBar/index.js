@@ -22,7 +22,7 @@ const menuItems = [
   {
     url: '',
     image: null,
-    content: 'Contact Us',
+    content: 'Learn More',
   }
 ];
 
@@ -31,7 +31,14 @@ class NavBar extends BaseComponent {
 
   constructor(props) {
     super(props);
-    this._bind('handleClick');
+    this.state = {
+      mobileMenu: false,
+    };
+    this._bind('handleClick','toggleMobileMenu');
+  }
+
+  toggleMobileMenu() {
+    this.setState({ mobileMenu: !this.state.mobileMenu });
   }
 
   handleClick(){
@@ -39,16 +46,37 @@ class NavBar extends BaseComponent {
   }
 
   render(){
+
+    const closedStyles = this.state.mobileMenu ? '' : styles.closed;
+
+    const menuIcon = this.state.mobileMenu ? 'close' : 'menu';
+
+    const height = {
+      height: `${(52) + 24}px`,
+    };
+
     return(
       <div className={styles.navBar}>
         <div className={styles.mobile}>
-
+          <div className={styles.contentLeft}>
+            <img src="images/dell_technologies.svg" />
+          </div>
+          <div className={styles.contentRight}>
+            <div onClick={this.toggleMobileMenu}>
+                <div className={[styles.hamburger, closedStyles].join(' ')}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </div>
+          </div>
         </div>
         <div className={styles.desktop}>
           <div className={styles.contentLeft}>
             <img src="images/dell_technologies.svg" />
           </div>
           <div className={styles.contentRight}>
+
             <ul>
               {
                 menuItems.map((item,index) => {
@@ -66,6 +94,22 @@ class NavBar extends BaseComponent {
             </ul>
           </div>
 
+        </div>
+        <div style={height} className={[styles.mobileMenu, closedStyles].join(' ')}>
+          <ul>
+            {menuItems.map((item,index) => {
+              return (
+                <li key={index} onClick={this.handleClick}>
+                     {item.image &&
+                       <img src={'images/' + item.image} />
+                     }
+                     {item.content &&
+                     item.content
+                     }
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     );

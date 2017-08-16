@@ -46,9 +46,6 @@ class Footer extends BaseComponent {
   render(){
     return(
       <div className={styles.footer}>
-        <div className={styles.mobile}>
-
-        </div>
         <div className={styles.desktop}>
           <div className={styles.content}>
             <div className={styles.logos}>
@@ -64,7 +61,12 @@ class Footer extends BaseComponent {
                   })}
             </div>
             <div className={styles.policy}>
-              Privacy Statement | Ads & Emails | Manage Cookies | ©2017  Dell Inc.
+              <ul>
+                <li>Privacy Statement</li>
+                <li>Ads & Emails</li>
+                <li>Manage Cookies</li>
+                <li>©2017  Dell Inc.</li>
+              </ul>
             </div>
           </div>
 
