@@ -1,0 +1,202 @@
+@import 'Config/styles/colors';
+@import 'Config/styles/easings';
+@import 'Config/styles/config';
+
+.contentWrapper{
+
+  width: 100%;
+
+  p {
+    font-size: 27px;
+    font-weight: 300;
+    display: flex;
+  }
+
+  h1{
+    font-size: 58px;
+    font-weight: 100;
+  }
+
+  h2{
+    font-size: 45px;
+    font-weight: 100;
+  }
+
+  .heroWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: url('/images/heroBackground.jpg') no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+
+    .hero{
+      width: 50%;
+      padding: 111px 0 111px 130px;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+      color: $dark-grey;
+
+      h1 {
+        display: flex;
+        margin: 0 0 50px 0;
+      }
+    }
+
+    .download{
+      display: flex;
+      color: $white;
+      align-items: center;
+      flex-direction: column;
+      background: rgba($dark-grey,.66);
+      padding: 40px 75px;
+
+      h2{
+        display: flex;
+        margin: 0 0 30px 0;
+        text-align: center;
+      }
+
+      p{
+        display: flex;
+        text-align: center;
+        margin: 0 0 40px 0;
+        max-width: 915px;
+      }
+
+      .buttons{
+        display: flex;
+
+
+        .button {
+          margin: 0 50px 0 0;
+          display: flex;
+
+          &:last-child{
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .watchWrapper{
+    background: $white;
+    padding: 45px 10%;
+
+    h2{
+      color: $dark-grey;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tileWrapper{
+      justify-content: space-between;
+      display: flex;
+
+      .tile{
+        max-width: 295px;
+        flex-direction: column;
+        text-align: center;
+
+        .icon{
+          margin-bottom: 40px;
+          height: 73px;
+
+          align-items: center;
+          justify-content: center;
+        }
+        .title{
+          font-weight: 100;
+          font-size: 25px;
+          margin-bottom: 30px;
+        }
+
+        .description{
+          max-width: 270px;
+          margin: auto;
+          font-size: 23px;
+          font-weight: 300;
+          align-items: flex-start;
+        }
+      }
+    }
+
+  }
+
+  .learnWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 40px 0;
+    background: url('/images/learnBackground.jpg') no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+
+
+    .link{
+      display: flex;
+      cursor: pointer;
+
+      .icon{
+        display: flex;
+        width: 66px;
+        height: 66px;
+        font-weight: 300;
+        font-size: 70px;
+        background: #007db8;
+        color: $white;
+        justify-content: center;
+        line-height: 50px;
+        margin-right: 20px;
+      }
+      .cta{
+        display: inline-block;
+        font-weight: 100;
+        font-size: 58px;
+        color: $dark-grey;
+      }
+    }
+  }
+
+    @media (max-width: $mobile-width){
+      .heroWrapper{
+        .hero{
+            width: 90%;
+            padding: 111px 5% 111px 5%;
+          p{
+            text-align: center;
+          }
+          h1{
+            text-align: center;
+          }
+        }
+        .download{
+          .buttons{
+            flex-direction: column;
+            align-items: center;
+            .button {
+              margin: 0 0 35px 0;
+            }
+          }
+        }
+      }
+      .watchWrapper{
+        h2{
+          margin-bottom: 80px;
+        }
+        .tileWrapper{
+          align-items: center;
+          flex-direction: column;
+
+          .tile{
+            margin: 0 0 80px 0;
+          }
+        }
+
+      }
+
+
+    }
+}

@@ -1,47 +1,14 @@
 import React from 'react';
 import styles from './styles.scss';
 
-import Video from '../../components/Video';
+import { connect } from 'react-redux';
+import { getVideos, updateVideos } from '../../actions/videos';
+import { getWatch, updateWatch } from '../../actions/watch';
+import { Route, Switch } from 'react-router';
+
+import VideoSection from '../../components/VideoSection';
 
 import BaseComponent from '../../../custom_modules/react-base';
-
-const data = {
-    watch: [
-      {
-      image: 'vrHeadset.svg',
-      title: 'The App + Headset (Best)',
-      description: 'Download the app and use a VR viewer for the ultimate experience.',
-      },
-      {
-      image: 'mobile360.svg',
-      title: 'Mobile 360 (Better)',
-      description: 'Visit the mobile-optimizedsite on your phone. Using a VR viewer is recommended but not required.',
-      },
-      {
-      image: 'desktop.svg',
-      title: 'Desktop (Good)',
-      description: 'Simply view the story and click to navigate. ',
-      },
-    ],
-    videos: [
-      {
-        title: 'Accelerate Change',
-        description: 'Otto Motors designs and manufactures autonomous robotic solutions for industrial use. See how Dell Technologies is facilitating the necessary communications signals for their self-driving vehicles.',
-        background: 'otto.jpg'
-      },
-      {
-        title: 'Swim with Whales',
-        description: 'Adrian Grenier partnered with Dell Technologies to create a VR experience that transports viewers into the depths of the sea to draw awareness to how pollution has disrupted underwater life.',
-        background: 'whales.jpg'
-      },
-      {
-        title: 'Rock Out Backstage',
-        description: 'The longest-running music television series, Austin City Limits is shot at the ACL Moody Theater and powered by Dell Technologies. Go behind the scenes of this cutting-edge music venue.',
-        background: 'rockout.jpg'
-      },
-    ]
-
-}
 
 class Home extends BaseComponent {
 
@@ -50,11 +17,20 @@ class Home extends BaseComponent {
     this._bind('videoHandler')
   }
 
+  componentDidMount(){
+      this.props.getVideos();
+      this.props.getWatch();
+  }
+
   videoHandler(){
 
   }
 
   render() {
+
+     let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
+     let watch = (this.props.watch && this.props.watch.body) ? this.props.watch.body : null;
+
     return(
       <div className={styles.contentWrapper}>
         <div className={styles.heroWrapper}>
@@ -71,10 +47,11 @@ class Home extends BaseComponent {
               </div>
           </div>
         </div>
+        {watch &&
         <div className={styles.watchWrapper}>
           <h2>Watch the way you want.</h2>
           <div className={styles.tileWrapper}>
-            {data.watch.map((item,index) =>{
+            {watch.map((item,index) =>{
               return(
                 <div key={index} className={styles.tile}>
                   <div className={styles.icon}><img src={'images/' + item.image} /></div>
@@ -85,11 +62,17 @@ class Home extends BaseComponent {
             })}
           </div>
         </div>
-        {data.videos.map((item,index) =>{
-          return(
-            <Video key={index} data={item} handler={this.videoHandler}/>
-          );
-        })}
+        }
+
+        {videos &&
+          <div>
+          {videos.map((item,index) =>{
+            return(
+              <VideoSection key={index} data={item} handler={this.videoHandler}/>
+            );
+          })}
+          </div>
+        }
         <div className={styles.learnWrapper}>
             <div className={styles.link}>
               <div className={styles.icon}>›</div>
@@ -101,4 +84,14 @@ class Home extends BaseComponent {
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  videos: state.videos,
+  watch: state.watch,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getVideos: () => { dispatch(getVideos()); },
+  getWatch: () => { dispatch(getWatch()); },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

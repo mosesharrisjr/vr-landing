@@ -59,7 +59,7 @@ class NavBar extends BaseComponent {
       <div className={styles.navBar}>
         <div className={styles.mobile}>
           <div className={styles.contentLeft}>
-            <img src="images/dell_technologies.svg" />
+            <img src="/images/dell_technologies.svg" />
           </div>
           <div className={styles.contentRight}>
             <div onClick={this.toggleMobileMenu}>
@@ -73,7 +73,7 @@ class NavBar extends BaseComponent {
         </div>
         <div className={styles.desktop}>
           <div className={styles.contentLeft}>
-            <img src="images/dell_technologies.svg" />
+            <img src="/images/dell_technologies.svg" />
           </div>
           <div className={styles.contentRight}>
 
@@ -83,7 +83,7 @@ class NavBar extends BaseComponent {
                   return(
                     <li key={index}><a onClick={this.handleClick}>
                       {item.image &&
-                        <img src={'images/' + item.image} />
+                        <img src={'/images/' + item.image} />
                       }
                       {item.content &&
                       item.content
@@ -101,7 +101,7 @@ class NavBar extends BaseComponent {
               return (
                 <li key={index} onClick={this.handleClick}>
                      {item.image &&
-                       <img src={'images/' + item.image} />
+                       <img src={'/images/' + item.image} />
                      }
                      {item.content &&
                      item.content

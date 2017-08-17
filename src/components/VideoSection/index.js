@@ -4,7 +4,7 @@ import styles from './styles.scss'
 import BaseComponent from '../../../custom_modules/react-base';
 
 
-class Video extends BaseComponent {
+class VideoSection extends BaseComponent {
 
   constructor(props) {
     super(props);
@@ -29,4 +29,4 @@ class Video extends BaseComponent {
   }
 }
 
-export default Video;
+export default VideoSection;

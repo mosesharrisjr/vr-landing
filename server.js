@@ -1,4 +1,7 @@
 import express from 'express';
+import API from './src/api/server';
+
+var ServerResponse = require('./config/lib/response');
 
 const app = express();
 
@@ -15,8 +18,28 @@ app.get('/', (req, res) => {
   res.render('pages/placeholder');
 });
 
-app.get('/site', (req, res) => {
+app.get('/api/video/:slug', (req, res) => {
+  ServerResponse.success(res, JSON.stringify(API.getOneVideo(req.params.slug)));
+});
+
+app.get('/api/videos', (req, res) => {
+  ServerResponse.success(res, JSON.stringify(API.getAllVideos()));
+});
+
+app.get('/api/logos', (req, res) => {
+  ServerResponse.success(res, JSON.stringify(API.getAllLogos()));
+});
+
+app.get('/api/watch', (req, res) => {
+  ServerResponse.success(res, JSON.stringify(API.getAllWatch()));
+});
+
+app.get('/*', (req, res) => {
   res.render('pages/index');
+});
+
+app.get('*', (req, res) => {
+  res.render('pages/not-found');
 });
 
 app.listen(app.get('port'), () => {
