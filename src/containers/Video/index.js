@@ -24,14 +24,14 @@ class Video extends BaseComponent {
 
 
   render() {
-    //const video = API.getAllVideos(props.match.params.id);
+    const video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
 
-    // if (!video) {
-    //   return <div>Sorry, but that video was not found</div>
-    // }
+    if (!video) {
+      return <div className={styles.default}>Sorry, but that video was not found</div>
+    }
 
     return (
-      <div>
+      <div className={styles.default}>
         <Link to='/site'>Back</Link>
       </div>
     );

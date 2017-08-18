@@ -52,7 +52,7 @@ const API = {
     {
       slug: 'accelerate-change',
       title: 'Accelerate Change',
-      description: 'Otto Motors designs and manufactures autonomous robotic solutions for industrial use. See how Dell Technologies is facilitating the necessary communications signals for their self-driving vehicles.',
+      description: 'Otto Motors designs and manufactures autonomous robotic solutions for industrial use. See how Dell Technologies is facilitating the necessary communications signals for  their self-driving vehicles.',
       background: 'otto.jpg'
     },
     {

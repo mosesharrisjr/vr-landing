@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getVideos, updateVideos } from '../../actions/videos';
 import { getWatch, updateWatch } from '../../actions/watch';
 import { Route, Switch } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import VideoSection from '../../components/VideoSection';
 
@@ -22,8 +23,8 @@ class Home extends BaseComponent {
       this.props.getWatch();
   }
 
-  videoHandler(){
-
+  videoHandler(slug){
+    console.log(slug);
   }
 
   render() {
@@ -51,7 +52,7 @@ class Home extends BaseComponent {
         <div className={styles.watchWrapper}>
           <h2>Watch the way you want.</h2>
           <div className={styles.tileWrapper}>
-            {watch.map((item,index) =>{
+            {watch.map((item,index) => {
               return(
                 <div key={index} className={styles.tile}>
                   <div className={styles.icon}><img src={'images/' + item.image} /></div>
@@ -63,16 +64,16 @@ class Home extends BaseComponent {
           </div>
         </div>
         }
-
-        {videos &&
-          <div>
-          {videos.map((item,index) =>{
+        <div>
+        {videos && videos.length > 0 &&
+          videos.map((item,index) => {
             return(
-              <VideoSection key={index} data={item} handler={this.videoHandler}/>
+              <Link key={index} to={ '/site/video/' + item.slug }>
+                <VideoSection data={item}/>
+              </Link>
             );
           })}
-          </div>
-        }
+        </div>
         <div className={styles.learnWrapper}>
             <div className={styles.link}>
               <div className={styles.icon}>›</div>

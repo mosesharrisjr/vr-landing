@@ -1,18 +1,14 @@
 import * as types from '../actions/types';
 
-const videosReducer = (state = null, action) => {
+const videoReducer = (state = null, action) => {
   switch (action.type) {
     case types.GET_VIDEO:
       return state;
     case types.UPDATE_VIDEO:
       return action.video;
-    case types.GET_VIDEOS:
-        return state;
-    case types.UPDATE_VIDEOS:
-        return action.videos;
     default:
       return state;
   }
 }
 
-export default videosReducer;
+export default videoReducer;

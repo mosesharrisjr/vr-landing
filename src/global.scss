@@ -1,20 +1,5 @@
 @import 'Config/styles/fonts';
-
-html {
-  background-color: #FFFFFF;
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  font-weight: 100;
-}
-
-body {
-
-}
-
-pre {
-  font-family: 'Roboto', san-serif;
-}
+@import 'Config/styles/colors';
 
 
 //CSS RESET
@@ -39,3 +24,16 @@ q:before, q:after {content: '';	content: none;}
 ins               {text-decoration: none;}
 del               {text-decoration: line-through;}
 table             {border-collapse: collapse;border-spacing: 0;}
+
+
+html {
+  background-color: $darker-grey;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  font-weight: 100;
+}
+
+pre {
+  font-family: 'Roboto', san-serif;
+}
