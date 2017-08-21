@@ -18,6 +18,16 @@
 
     position: absolute;
     align-self: center;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 
   .blurb{

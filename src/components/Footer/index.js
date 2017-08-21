@@ -33,7 +33,7 @@ class Footer extends BaseComponent {
                     return(
                       <div className={styles.logo} key={index}>
                         {item.image &&
-                          <img src={'/images/' + item.image} />
+                          <a href={item.url} target='_blank'><img src={'/images/' + item.image} /></a>
                         }
                       </div>
                     );

@@ -1,0 +1,18 @@
+@import 'Config/styles/colors';
+@import 'Config/styles/easings';
+@import 'Config/styles/config';
+
+.noMatch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  background: $white;
+
+
+  .content{
+    display: flex;
+    font-size: 27px;
+  }
+
+}

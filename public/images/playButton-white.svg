@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="97px" viewBox="0 0 96 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>playButton</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="playButton" transform="translate(3.000000, 3.000000)">
+            <polygon id="Triangle" fill="#FFFFFF" fill-rule="nonzero" opacity="0.75" points="73.735 45.208 30.361 66.895 30.361 23.521"></polygon>
+            <circle id="Oval" stroke="#FFFFFF" stroke-width="6" opacity="0.7535" cx="45" cy="45.75" r="45"></circle>
+        </g>
+    </g>
+</svg>

@@ -47,6 +47,7 @@
     "redux-persist": "^4.8.3",
     "redux-saga": "^0.15.6",
     "sass-loader": "^6.0.6",
+    "scrollreveal": "^3.3.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.4"
   },

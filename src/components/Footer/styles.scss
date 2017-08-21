@@ -31,6 +31,11 @@
         .logo {
           display: flex;
           margin: 0;
+
+          a {
+            display: flex;
+            cursor: pointer;
+          }
         }
       }
 
@@ -46,6 +51,11 @@
           > li{
             display: flex;
             padding: 0 0 0 7px;
+
+            &:hover{
+              text-decoration: underline;
+              cursor: pointer;
+            }
 
             &::after{
               content: "|";
