@@ -12,6 +12,8 @@ import VideoSection from '../../components/VideoSection';
 
 import BaseComponent from '../../../custom_modules/react-base';
 
+import OnVisible, { setDefaultProps } from 'react-on-visible';
+
 class Home extends BaseComponent {
 
   constructor(props) {
@@ -33,36 +35,47 @@ class Home extends BaseComponent {
      let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
      let watch = (this.props.watch && this.props.watch.body) ? this.props.watch.body : null;
 
+     setDefaultProps({
+         bounce: true,
+         visibleClassName: styles.visible,
+         percent: 100
+     });
+
     return(
       <div className={styles.contentWrapper}>
-        <div className={styles.heroWrapper}>
-          <div className={styles.hero}>
-              <h1>Experience transformationalstories in Virtual Reality.</h1>
-              <p>Every day, people and technology are coming together to transform their organization. Watch these VR stories to experience it for yourself.</p>
-          </div>
-          <div className={styles.download}>
-              <h2>Get the ultimate VR experience.</h2>
-              <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
-              <div className={styles.buttons}>
-                <div className={styles.button}><img src="images/itunesAppStore.svg" /></div>
-                <div className={styles.button}><img src="images/googlePlay.svg" /></div>
-                <div className={styles.button}><img src="images/samsungGear.svg" /></div>
+
+          <div className={styles.heroWrapper}>
+            <div className={styles.wrangler}>
+              <div className={styles.hero}>
+                  <h1>Experience transformational stories in Virtual Reality.</h1>
+                  <p>Every day, people and technology are coming together to transform their organization. Watch these VR stories to experience it for yourself.</p>
               </div>
-          </div>
+            </div>
+            <div className={styles.download}>
+                <h2>Get the ultimate VR experience.</h2>
+                <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
+                <div className={styles.buttons}>
+                  <div className={styles.button}><img src="images/itunesAppStore.svg" /></div>
+                  <div className={styles.button}><img src="images/googlePlay.svg" /></div>
+                  <div className={styles.button}><img src="images/samsungGear.svg" /></div>
+                </div>
+            </div>
         </div>
         {watch &&
         <div className={styles.watchWrapper}>
+          <div className={styles.wrangler}>
           <h2>Watch the way you want.</h2>
           <div className={styles.tileWrapper}>
             {watch.map((item,index) => {
               return(
-                <div key={index} className={styles.tile}>
-                  <div className={styles.icon}><img src={'images/' + item.image} /></div>
-                  <div className={styles.title}>{item.title}</div>
-                  <div className={styles.description}>{item.description}</div>
-                </div>
+                <OnVisible key={index} className={styles.tile} style={{transitionDelay: `${index % 3 * 100}ms`}}>
+                    <div className={styles.icon}><img src={'images/' + item.image} /></div>
+                    <div className={styles.title}>{item.title}</div>
+                    <div className={styles.description}>{item.description}</div>
+                </OnVisible>
               );
             })}
+          </div>
           </div>
         </div>
         }

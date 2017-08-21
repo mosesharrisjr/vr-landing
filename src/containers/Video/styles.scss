@@ -7,6 +7,14 @@
   font-size: 27px;
 }
 
+.wrangler {
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  flex-direction: column;
+}
+
+
 .videoWrapper{
   min-height: 100vh;
   position: relative;
@@ -70,7 +78,7 @@
       width: 91px;
       align-self: center;
       z-index: 99;
-      transition: all .2s ease-in-out;
+      transition: all .2s $ease-out;
       cursor: pointer;
 
       img {

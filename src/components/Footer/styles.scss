@@ -52,9 +52,13 @@
             display: flex;
             padding: 0 0 0 7px;
 
-            &:hover{
-              text-decoration: underline;
-              cursor: pointer;
+            a {
+              color: $white;
+              text-decoration: none;
+
+              &:hover{
+                text-decoration: underline;
+              }
             }
 
             &::after{

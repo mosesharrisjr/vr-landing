@@ -22,6 +22,13 @@
     font-weight: 100;
   }
 
+  .wrangler {
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    flex-direction: column;
+  }
+
   .heroWrapper{
     width: 100%;
     display: flex;
@@ -100,6 +107,8 @@
         max-width: 295px;
         flex-direction: column;
         text-align: center;
+        opacity: 0;
+        transition: all .2s $ease-out-quad;
 
         .icon{
           margin-bottom: 40px;
@@ -121,6 +130,10 @@
           font-weight: 300;
           align-items: flex-start;
         }
+      }
+
+      .visible {
+        opacity: 1;
       }
     }
 

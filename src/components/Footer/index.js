@@ -42,9 +42,9 @@ class Footer extends BaseComponent {
             }
             <div className={styles.policy}>
               <ul>
-                <li>Privacy Statement</li>
-                <li>Ads & Emails</li>
-                <li>Manage Cookies</li>
+                <li><a href='http://www.dell.com/learn/us/en/uscorp1/policies-privacy' target='_blank'>Privacy Statement</a></li>
+                <li><a href='http://www.dell.com/learn/us/en/uscorp1/policies-ads-and-emails' target='_blank'>Ads & Emails</a></li>
+                <li><a href='http://info.evidon.com/pub_info/8498' target='_blank'>Manage Cookies</a></li>
                 <li>©2017  Dell Inc.</li>
               </ul>
             </div>

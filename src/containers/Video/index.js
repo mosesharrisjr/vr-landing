@@ -39,6 +39,7 @@ class Video extends BaseComponent {
     return (
       <div>
         <div className={styles.videoWrapper}>
+          <div className={styles.wrangler}>
           <div className={styles.breadCrumb}>
             <ul>
               <li><Link to='/site'>Home</Link></li>
@@ -84,6 +85,7 @@ class Video extends BaseComponent {
               }
             </div>
 
+          </div>
           </div>
         </div>
         <LearnMore />
