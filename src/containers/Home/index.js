@@ -55,9 +55,9 @@ class Home extends BaseComponent {
                 <h2>Get the ultimate VR experience.</h2>
                 <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
                 <div className={styles.buttons}>
-                  <div className={styles.button}><img src="images/itunesAppStore.svg" /></div>
-                  <div className={styles.button}><img src="images/googlePlay.svg" /></div>
-                  <div className={styles.button}><img src="images/samsungGear.svg" /></div>
+                  <div className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
+                  <div className={styles.button}><img src="/images/googlePlay.svg" /></div>
+                  <div className={styles.button}><img src="/images/samsungGear.svg" /></div>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@ class Home extends BaseComponent {
             {watch.map((item,index) => {
               return(
                 <OnVisible key={index} className={styles.tile} style={{transitionDelay: `${index % 3 * 100}ms`}}>
-                    <div className={styles.icon}><img src={'images/' + item.image} /></div>
+                    <div className={styles.icon}><img src={'/images/' + item.image} /></div>
                     <div className={styles.title}>{item.title}</div>
                     <div className={styles.description}>{item.description}</div>
                 </OnVisible>
