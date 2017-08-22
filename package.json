@@ -9,6 +9,9 @@
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "8.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mosesharrisjr/vr-landing.git"
