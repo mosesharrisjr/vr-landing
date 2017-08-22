@@ -1,6 +1,7 @@
 import express from 'express';
 import API from './src/api/server';
-var auth = require('basic-auth');
+var auth = require('basic-auth'),
+    path = require('path');
 
 var ServerResponse = require('./config/lib/response');
 
@@ -9,7 +10,7 @@ const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -50,9 +51,9 @@ if(process.env.NODE_ENV !== 'development'){
   });
 }
 
-// app.get('/*', (req, res) => {
-//   res.render('pages/index');
-// });
+app.get('/*', (req, res) => {
+  res.render('pages/index');
+});
 
 app.get('*', (req, res) => {
   res.render('pages/not-found');
