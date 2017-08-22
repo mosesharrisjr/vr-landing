@@ -35,13 +35,6 @@ app.get('/api/watch', (req, res) => {
   ServerResponse.success(res, JSON.stringify(API.getAllWatch()));
 });
 
-app.get('/*', (req, res) => {
-  res.render('pages/index');
-});
-
-app.get('*', (req, res) => {
-  res.render('pages/not-found');
-});
 
 if(process.env.NODE_ENV !== 'development'){
   app.use(function(req, res, next){
@@ -57,9 +50,12 @@ if(process.env.NODE_ENV !== 'development'){
   });
 }
 
-app.get('/site*', (req, res) => {
-  console.log('getting here');
-  res.render('pages/index');
+// app.get('/*', (req, res) => {
+//   res.render('pages/index');
+// });
+
+app.get('*', (req, res) => {
+  res.render('pages/not-found');
 });
 
 app.listen(app.get('port'), () => {
