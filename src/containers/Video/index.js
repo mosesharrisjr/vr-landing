@@ -21,6 +21,7 @@ class Video extends BaseComponent {
   componentDidMount(){
       this.props.getVideo({slug: this.props.match.params.slug});
       this.props.getVideos();
+      window.scroll(0,0);
   }
 
 

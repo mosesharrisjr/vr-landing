@@ -20,7 +20,7 @@ const history = createBrowserHistory({
 
 import rootReducer from './reducers';
 
-const composeEnhancers = composeWithDevTools;
+const composeEnhancers = (process.env.NODE_ENV == 'development') ? composeWithDevTools : compose;
 const middleware = [ routerMiddleware(history), sagaMiddleware ];
 const store = createStore(
   connectRouter(history)(rootReducer),

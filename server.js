@@ -35,17 +35,20 @@ app.get('/api/watch', (req, res) => {
   ServerResponse.success(res, JSON.stringify(API.getAllWatch()));
 });
 
-app.use(function(req, res, next){
-    var user = auth(req);
 
-    if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
-        res.statusCode = 401;
-        res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
-        res.end('Unauthorized');
-    } else {
-        next();
-    }
-});
+if(process.env.NODE_ENV !== 'development'){
+  app.use(function(req, res, next){
+      var user = auth(req);
+
+      if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
+          res.statusCode = 401;
+          res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
+          return res.end('Unauthorized');
+      } else {
+          next();
+      }
+  });
+}
 
 app.get('/*', (req, res) => {
   res.render('pages/index');
