@@ -29,6 +29,8 @@ app.use(compress({
 
 app.use('/', express.static(path.join(__dirname, '/public')));
 
+app.use('/site', express.static(path.join(__dirname, '/public')));
+
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -68,13 +70,13 @@ if(process.env.NODE_ENV !== 'development'){
   });
 }
 
-app.get('/site', (req, res) => {
+app.get('/*', (req, res) => {
   res.render('pages/index');
 });
 
-// app.get('*', (req, res) => {
-//   res.render('pages/not-found');
-// });
+app.get('*', (req, res) => {
+  res.render('pages/not-found');
+});
 
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
