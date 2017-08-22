@@ -1,5 +1,6 @@
 import express from 'express';
 import API from './src/api/server';
+var auth = require('basic-auth');
 
 var ServerResponse = require('./config/lib/response');
 
@@ -32,6 +33,18 @@ app.get('/api/logos', (req, res) => {
 
 app.get('/api/watch', (req, res) => {
   ServerResponse.success(res, JSON.stringify(API.getAllWatch()));
+});
+
+app.use(function(req, res, next){
+    var user = auth(req);
+
+    if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
+        res.statusCode = 401;
+        res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
+        res.end('Unauthorized');
+    } else {
+        next();
+    }
 });
 
 app.get('/*', (req, res) => {
