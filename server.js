@@ -1,6 +1,8 @@
 import express from 'express';
 import API from './src/api/server';
 var auth = require('basic-auth'),
+    helmet = require('helmet'),
+    compress = require('compression'),
     path = require('path');
 
 var ServerResponse = require('./config/lib/response');
@@ -8,6 +10,22 @@ var ServerResponse = require('./config/lib/response');
 const app = express();
 
 app.set('port', (process.env.PORT || 5000));
+
+var SIX_MONTHS = 15778476000;
+
+app.use(helmet());
+app.use(helmet.hsts({
+  maxAge: SIX_MONTHS,
+  includeSubdomains: true,
+  force: true
+}));
+
+app.use(compress({
+  filter: function (req, res) {
+    return (/json|text|javascript|css|font|svg/).test(res.getHeader('Content-Type'));
+  },
+  level: 9
+}));
 
 app.use('/', express.static(path.join(__dirname, '/public')));
 
@@ -50,7 +68,7 @@ if(process.env.NODE_ENV !== 'development'){
   });
 }
 
-app.get('/*', (req, res) => {
+app.get('/site', (req, res) => {
   res.render('pages/index');
 });
 
