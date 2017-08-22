@@ -7,10 +7,9 @@ var ServerResponse = require('./config/lib/response');
 
 const app = express();
 
-
 app.set('port', (process.env.PORT || 5000));
 
-app.use('/site/', express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -44,7 +43,7 @@ if(process.env.NODE_ENV !== 'development'){
       if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
           res.statusCode = 401;
           res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
-          return res.end('Unauthorized');
+          return res.render('pages/forbidden');
       } else {
           next();
       }
