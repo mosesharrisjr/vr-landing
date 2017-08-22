@@ -72,9 +72,9 @@ app.get('/site', (req, res) => {
   res.render('pages/index');
 });
 
-app.get('*', (req, res) => {
-  res.render('pages/not-found');
-});
+// app.get('*', (req, res) => {
+//   res.render('pages/not-found');
+// });
 
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
