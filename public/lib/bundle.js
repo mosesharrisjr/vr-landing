@@ -35899,17 +35899,17 @@ var Home = function (_BaseComponent) {
               _react2.default.createElement(
                 'div',
                 { className: _styles2.default.button },
-                _react2.default.createElement('img', { src: 'images/itunesAppStore.svg' })
+                _react2.default.createElement('img', { src: '/images/itunesAppStore.svg' })
               ),
               _react2.default.createElement(
                 'div',
                 { className: _styles2.default.button },
-                _react2.default.createElement('img', { src: 'images/googlePlay.svg' })
+                _react2.default.createElement('img', { src: '/images/googlePlay.svg' })
               ),
               _react2.default.createElement(
                 'div',
                 { className: _styles2.default.button },
-                _react2.default.createElement('img', { src: 'images/samsungGear.svg' })
+                _react2.default.createElement('img', { src: '/images/samsungGear.svg' })
               )
             )
           )
@@ -35935,7 +35935,7 @@ var Home = function (_BaseComponent) {
                   _react2.default.createElement(
                     'div',
                     { className: _styles2.default.icon },
-                    _react2.default.createElement('img', { src: 'images/' + item.image })
+                    _react2.default.createElement('img', { src: '/images/' + item.image })
                   ),
                   _react2.default.createElement(
                     'div',
