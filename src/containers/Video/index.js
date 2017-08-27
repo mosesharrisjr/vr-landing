@@ -60,7 +60,7 @@ class Video extends BaseComponent {
             <div className={styles.blurb}>
               <div className={styles.content}>
                 <div className={styles.title}>{video.title}</div>
-                <div className={styles.description}>{video.description}
+                <div className={styles.description} dangerouslySetInnerHTML={{__html: video.description}}>
                 </div>
               </div>
             </div>

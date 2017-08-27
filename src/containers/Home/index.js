@@ -47,13 +47,13 @@ class Home extends BaseComponent {
           <div className={styles.heroWrapper}>
             <div className={styles.wrangler}>
               <div className={styles.hero}>
-                  <h1>Experience transformational stories in Virtual Reality.</h1>
-                  <p>Every day, people and technology are coming together to transform their organization. Watch these VR stories to experience it for yourself.</p>
+                  <h1>Experience transformational stories in Virtual Reality.</h1>
+                  <p>Every day, people and technology are coming together to transform their organizations. Watch these VR stories to experience it for yourself.</p>
               </div>
             </div>
             <div className={styles.download}>
                 <h2>Get the ultimate VR experience.</h2>
-                <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
+                <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
                 <div className={styles.buttons}>
                   <div className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
                   <div className={styles.button}><img src="/images/googlePlay.svg" /></div>

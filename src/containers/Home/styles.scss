@@ -7,13 +7,14 @@
   width: 100%;
 
   p {
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 300;
     display: flex;
+    line-height: 27px;
   }
 
   h1{
-    font-size: 58px;
+    font-size: 42px;
     font-weight: 100;
   }
 
@@ -39,7 +40,7 @@
     background-attachment: fixed;
 
     .hero{
-      width: 50%;
+      width: 46%;
       padding: 111px 0 111px 130px;
       justify-content: center;
       flex-direction: column;
