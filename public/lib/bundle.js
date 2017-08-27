@@ -34490,15 +34490,15 @@ var _reactBase2 = _interopRequireDefault(_reactBase);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var menuItems = [{
-  url: '',
+  url: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fvr.delltechnologies.com&title=Dell%20Technologies%20Virtual%20Reality&summary=Experience%20transformational%20stories%20in%20Virtual%20Reality.',
   image: 'linkedin.svg',
   content: null
 }, {
-  url: '',
+  url: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvr.delltechnologies.com',
   image: 'facebook.svg',
   content: null
 }, {
-  url: '',
+  url: 'https://twitter.com/intent/tweet?url=https%3A%2F%2Fvr.delltechnologies.com&text=Dell%20Technologies%20Virtual%20Reality&via=DellTech',
   image: 'twitter.svg',
   content: null
 }, {
@@ -34529,7 +34529,10 @@ var NavBar = function (_BaseComponent) {
     }
   }, {
     key: 'handleClick',
-    value: function handleClick() {}
+    value: function handleClick(url) {
+      console.log(url);
+      window.location = url;
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -34590,7 +34593,7 @@ var NavBar = function (_BaseComponent) {
                   { key: index },
                   _react2.default.createElement(
                     'a',
-                    { onClick: _this2.handleClick },
+                    { target: '_blank', href: item.url },
                     item.image && _react2.default.createElement('img', { src: '/images/' + item.image }),
                     item.content && item.content
                   )
@@ -34608,7 +34611,9 @@ var NavBar = function (_BaseComponent) {
             menuItems.map(function (item, index) {
               return _react2.default.createElement(
                 'li',
-                { key: index, onClick: _this2.handleClick },
+                { key: index, onClick: function onClick() {
+                    _this2.handleClick(item.url);
+                  } },
                 item.image && _react2.default.createElement('img', { src: '/images/' + item.image }),
                 item.content && item.content
               );
@@ -35401,7 +35406,7 @@ exports = module.exports = __webpack_require__(31)(undefined);
 
 
 // module
-exports.push([module.i, ".styles--navBar__CmPJ8 {\n  background: #444444;\n  color: #FFFFFF;\n  padding: 0 0 0 16px;\n  font-size: 22px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n  .styles--navBar__CmPJ8 .styles--mobile__3PXA9 {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    height: 60px;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    width: 100%; }\n  .styles--navBar__CmPJ8 .styles--hamburger__vMcoq {\n    height: 14px;\n    position: relative;\n    width: 20px;\n    margin-right: 20px; }\n    .styles--navBar__CmPJ8 .styles--hamburger__vMcoq:hover {\n      cursor: pointer; }\n    .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span {\n      background-color: #fff;\n      content: ' ';\n      display: block;\n      height: 2px;\n      position: absolute;\n      transition: all 200ms cubic-bezier(0, 0, 0.25, 1);\n      width: 20px; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span:nth-child(1) {\n        top: 6px;\n        -webkit-transform: rotate(135deg);\n                transform: rotate(135deg); }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span:nth-child(2) {\n        left: 50%;\n        opacity: .3;\n        top: 6px;\n        width: 0; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span:nth-child(3) {\n        top: 6px;\n        -webkit-transform: rotate(-135deg);\n                transform: rotate(-135deg); }\n    .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span {\n      height: 2px;\n      -webkit-transform: rotate(0);\n              transform: rotate(0);\n      width: 20px; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span:nth-child(1) {\n        top: 0; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span:nth-child(2) {\n        opacity: 1;\n        left: 0; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span:nth-child(3) {\n        top: 12px; }\n  .styles--navBar__CmPJ8 .styles--link__2BIio {\n    box-sizing: border-box;\n    color: #fff;\n    height: 60px;\n    line-height: 60px;\n    position: relative;\n    text-decoration: none;\n    transition: all 100ms cubic-bezier(0, 0, 0.25, 1); }\n    .styles--navBar__CmPJ8 .styles--link__2BIio:hover {\n      color: #ebebeb; }\n  .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM {\n    background-color: #444444;\n    box-sizing: border-box;\n    font-weight: 100;\n    left: 0;\n    overflow: hidden;\n    position: absolute;\n    top: 60px;\n    transition: height 200ms cubic-bezier(0, 0, 0.25, 1);\n    width: 100%;\n    z-index: 99;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM .styles--link__2BIio {\n      height: auto;\n      white-space: nowrap; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM a:hover {\n      font-weight: 700; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM a.styles--active__3tct- {\n      color: #c7c7c7;\n      font-weight: 700;\n      pointer-events: none; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM.styles--closed__S6rM2 {\n      border-top-width: 0;\n      height: 0 !important; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM ul {\n      padding: 0 10%;\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between; }\n      .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM ul > li {\n        padding: 12px 0;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        cursor: pointer; }\n  .styles--navBar__CmPJ8 .styles--desktop__2wtUg {\n    height: 60px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    max-width: 1400px;\n    margin: auto;\n    width: 100%; }\n    .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-flex: 1;\n          -ms-flex-positive: 1;\n              flex-grow: 1; }\n      .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul > li {\n        margin-right: 22px;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        cursor: pointer; }\n        .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul > li:hover {\n          opacity: .6; }\n      .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul:last-child {\n        margin-right: 45px; }\n  .styles--navBar__CmPJ8 .styles--contentLeft__25jWJ {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n    .styles--navBar__CmPJ8 .styles--contentLeft__25jWJ img {\n      transition: width 200ms cubic-bezier(0.19, 1, 0.22, 1); }\n  .styles--navBar__CmPJ8 .styles--contentRight__3O8Bb {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  @media (max-width: 700px) {\n    .styles--navBar__CmPJ8 .styles--desktop__2wtUg {\n      display: none; } }\n  @media (min-width: 700px) {\n    .styles--navBar__CmPJ8 .styles--mobile__3PXA9 {\n      display: none; } }\n", ""]);
+exports.push([module.i, ".styles--navBar__CmPJ8 {\n  background: #444444;\n  color: #FFFFFF;\n  padding: 0 0 0 16px;\n  font-size: 22px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n  .styles--navBar__CmPJ8 .styles--mobile__3PXA9 {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    height: 60px;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    width: 100%; }\n  .styles--navBar__CmPJ8 .styles--hamburger__vMcoq {\n    height: 14px;\n    position: relative;\n    width: 20px;\n    margin-right: 20px; }\n    .styles--navBar__CmPJ8 .styles--hamburger__vMcoq:hover {\n      cursor: pointer; }\n    .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span {\n      background-color: #fff;\n      content: ' ';\n      display: block;\n      height: 2px;\n      position: absolute;\n      transition: all 200ms cubic-bezier(0, 0, 0.25, 1);\n      width: 20px; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span:nth-child(1) {\n        top: 6px;\n        -webkit-transform: rotate(135deg);\n                transform: rotate(135deg); }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span:nth-child(2) {\n        left: 50%;\n        opacity: .3;\n        top: 6px;\n        width: 0; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq > span:nth-child(3) {\n        top: 6px;\n        -webkit-transform: rotate(-135deg);\n                transform: rotate(-135deg); }\n    .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span {\n      height: 2px;\n      -webkit-transform: rotate(0);\n              transform: rotate(0);\n      width: 20px; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span:nth-child(1) {\n        top: 0; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span:nth-child(2) {\n        opacity: 1;\n        left: 0; }\n      .styles--navBar__CmPJ8 .styles--hamburger__vMcoq.styles--closed__S6rM2 > span:nth-child(3) {\n        top: 12px; }\n  .styles--navBar__CmPJ8 .styles--link__2BIio {\n    box-sizing: border-box;\n    color: #fff;\n    height: 60px;\n    line-height: 60px;\n    position: relative;\n    text-decoration: none;\n    transition: all 100ms cubic-bezier(0, 0, 0.25, 1); }\n    .styles--navBar__CmPJ8 .styles--link__2BIio:hover {\n      color: #ebebeb; }\n  .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM {\n    background-color: #444444;\n    box-sizing: border-box;\n    font-weight: 100;\n    left: 0;\n    overflow: hidden;\n    position: absolute;\n    top: 60px;\n    transition: height 200ms cubic-bezier(0, 0, 0.25, 1);\n    width: 100%;\n    z-index: 99;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM .styles--link__2BIio {\n      height: auto;\n      white-space: nowrap; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM a:hover {\n      font-weight: 700; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM a.styles--active__3tct- {\n      color: #c7c7c7;\n      font-weight: 700;\n      pointer-events: none; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM.styles--closed__S6rM2 {\n      border-top-width: 0;\n      height: 0 !important; }\n    .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM ul {\n      padding: 0 10%;\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between; }\n      .styles--navBar__CmPJ8 .styles--mobileMenu__1yNUM ul > li {\n        padding: 12px 0;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        cursor: pointer; }\n  .styles--navBar__CmPJ8 .styles--desktop__2wtUg {\n    height: 60px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    max-width: 1400px;\n    margin: auto;\n    width: 100%; }\n    .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-flex: 1;\n          -ms-flex-positive: 1;\n              flex-grow: 1; }\n      .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul > li {\n        margin-right: 22px;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        cursor: pointer; }\n        .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul > li:hover {\n          opacity: .6; }\n      .styles--navBar__CmPJ8 .styles--desktop__2wtUg ul:last-child {\n        margin-right: 45px; }\n  .styles--navBar__CmPJ8 .styles--contentLeft__25jWJ {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n    .styles--navBar__CmPJ8 .styles--contentLeft__25jWJ img {\n      transition: width 200ms cubic-bezier(0.19, 1, 0.22, 1); }\n  .styles--navBar__CmPJ8 .styles--contentRight__3O8Bb {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .styles--navBar__CmPJ8 .styles--contentRight__3O8Bb a {\n      text-decoration: none;\n      color: #FFFFFF; }\n      .styles--navBar__CmPJ8 .styles--contentRight__3O8Bb a:hover {\n        text-decoration: underline; }\n  @media (max-width: 700px) {\n    .styles--navBar__CmPJ8 .styles--desktop__2wtUg {\n      display: none; } }\n  @media (min-width: 700px) {\n    .styles--navBar__CmPJ8 .styles--mobile__3PXA9 {\n      display: none; } }\n", ""]);
 
 // exports
 exports.locals = {
@@ -36688,7 +36693,11 @@ var Video = function (_BaseComponent) {
 
   function Video(props) {
     (0, _classCallCheck3.default)(this, Video);
-    return (0, _possibleConstructorReturn3.default)(this, (Video.__proto__ || (0, _getPrototypeOf2.default)(Video)).call(this, props));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Video.__proto__ || (0, _getPrototypeOf2.default)(Video)).call(this, props));
+
+    _this._bind('thumbnailClick');
+    return _this;
   }
 
   (0, _createClass3.default)(Video, [{
@@ -36699,8 +36708,15 @@ var Video = function (_BaseComponent) {
       window.scroll(0, 0);
     }
   }, {
+    key: 'thumbnailClick',
+    value: function thumbnailClick(slug) {
+      window.location = '/site/video/' + slug;
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var video = this.props.video && this.props.video.body ? this.props.video.body : null;
       var videos = this.props.videos && this.props.videos.body ? this.props.videos.body : null;
 
@@ -36789,7 +36805,9 @@ var Video = function (_BaseComponent) {
                   if (thumb.title !== video.title) {
                     return _react2.default.createElement(
                       'div',
-                      { key: index, className: _styles2.default.thumbnail },
+                      { onClick: function onClick() {
+                          _this2.thumbnailClick(thumb.slug);
+                        }, key: index, className: _styles2.default.thumbnail },
                       _react2.default.createElement('img', { src: '/images/' + thumb.thumb }),
                       _react2.default.createElement(
                         'div',

@@ -16,6 +16,7 @@ class Video extends BaseComponent {
 
   constructor(props) {
     super(props);
+    this._bind('thumbnailClick')
   }
 
   componentDidMount(){
@@ -24,6 +25,9 @@ class Video extends BaseComponent {
       window.scroll(0,0);
   }
 
+  thumbnailClick(slug){
+      window.location = '/site/video/' + slug;
+  }
 
   render() {
     const video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
@@ -72,7 +76,7 @@ class Video extends BaseComponent {
                 videos.map((thumb, index) => {
                   if(thumb.title !== video.title){
                     return (
-                      <div key={index} className={styles.thumbnail}>
+                      <div onClick={()=> {this.thumbnailClick(thumb.slug)}} key={index} className={styles.thumbnail}>
                         <img src={'/images/' + thumb.thumb} />
                         <div className={styles.titleWrapper}>
                             <div className={styles.title}>
