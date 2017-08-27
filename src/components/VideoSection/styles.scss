@@ -1,5 +1,6 @@
 @import 'Config/styles/colors';
 @import 'Config/styles/easings';
+@import 'Config/styles/config';
 
 .videoSection{
   background: $darker-grey;
@@ -10,6 +11,9 @@
   position: relative;
   justify-content: center;
   cursor: pointer;
+
+  background-repeat: no-repeat;
+  background-size: cover;
 
 
   .playButton {
@@ -59,20 +63,20 @@
 
   }
 
-  $mobile-width: 700px;
+}
 
-  @media (max-width: $mobile-width){
-    .desktop{
+@media (max-width: $mobile-width){
+
+  .videoSection{
+    background-position: 67% 0%;
+
+    .playButton{
       display: none;
     }
-  }
 
-  @media (min-width: $mobile-width){
-    .mobile{
-      display: none;
+    .blurb{
+      width: 47%;
+      max-width: none;
     }
   }
-
-
-
 }

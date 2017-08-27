@@ -32,15 +32,22 @@
           display: flex;
           margin: 0;
 
-          a {
+          a{
             display: flex;
             cursor: pointer;
+            align-items: center;
+            justify-content: center;
+
+            img{
+              width: 80%;
+              height: 80%;
+            }
           }
         }
       }
 
       .policy{
-        font-size: 17px;
+        font-size: 16px;
         display: flex;
         justify-content: center;
         flex-direction: row;
