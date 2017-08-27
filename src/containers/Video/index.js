@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styles from './styles.scss';
 
@@ -16,7 +17,10 @@ class Video extends BaseComponent {
 
   constructor(props) {
     super(props);
-    this._bind('thumbnailClick')
+    this.state = {
+      playing: false,
+    }
+    this._bind('thumbnailClick','playVideo')
   }
 
   componentDidMount(){
@@ -27,6 +31,10 @@ class Video extends BaseComponent {
 
   thumbnailClick(slug){
       window.location = '/site/video/' + slug;
+  }
+
+  playVideo(){
+    this.setState({playing: true});
   }
 
   render() {
@@ -41,6 +49,12 @@ class Video extends BaseComponent {
       );
     }
 
+    function setAttributes(el, attrs) {
+      for(var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+      }
+    }
+
     return (
       <div>
         <div className={styles.videoWrapper}>
@@ -51,24 +65,44 @@ class Video extends BaseComponent {
               <li>{video.title}</li>
             </ul>
           </div>
-          <div className={styles.videoPane} style={
-              {
-                background: 'url(/images/' + video.capture + ') no-repeat',
-                backgroundPosition: '50% 50%',
-                backgroundSize: "cover",
-              }
-            }>
-            <div className={styles.playButton}>
-              <img src="/images/playButton-white.svg"/>
-            </div>
-            <div className={styles.blurb}>
-              <div className={styles.content}>
-                <div className={styles.title}>{video.title}</div>
-                <div className={styles.description} dangerouslySetInnerHTML={{__html: video.description}}>
+
+          {this.state.playing == false &&
+            <div onClick={this.playVideo} className={styles.videoPane} style={
+                  {
+                    backgroundImage: 'url(/images/' + video.capture + ')',
+                    backgroundRepeat: 'no-repeat',
+                  }
+                }>
+              <div className={styles.playButton}>
+                <img src="/images/playButton-white.svg"/>
+              </div>
+              <div className={styles.blurb}>
+                <div className={styles.content}>
+                  <div className={styles.title}>{video.title}</div>
+                  <div className={styles.description} dangerouslySetInnerHTML={{__html: video.description}}>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          }
+          {this.state.playing &&
+            <div>
+              <iframe
+                ref={
+                  node => node && setAttributes(node,
+                  {
+                    appid:"70d567ea0e05e5dd13fa84e7b34c311f",
+                    vuuid: video.id,
+                    allowfullscreen: "true",
+                    webkitallowfullscreen: "true"
+                  })
+                }
+                className={"vb-iframe-player " + styles.videoPane }>
+              </iframe>
+            </div>
+          }
+
+
           <div className={styles.watchMoreWrapper}>
             <h2>Watch more</h2>
             <div className={styles.thumbnails}>

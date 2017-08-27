@@ -69,7 +69,7 @@
     margin: 0 0 60px 0;
 
     background: rgba($dark-grey, .2);
-    background-position: 50% 50%;
+    background-position: 7% 50%;
     background-size: cover;
 
     .playButton {
@@ -172,11 +172,15 @@
 
   @media (max-width: $mobile-width){
     .videoPane{
+      height: calc(.5625 * 100vw);
+      background-position: 50% 17%;
 
       .playButton {
       }
 
       .blurb{
+        display: none;
+
         .content{
           width: 100%;
 
