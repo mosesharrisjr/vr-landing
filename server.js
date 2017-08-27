@@ -55,19 +55,19 @@ app.get('/api/watch', (req, res) => {
 });
 
 
-// if(process.env.NODE_ENV !== 'development'){
-//   app.use(function(req, res, next){
-//       var user = auth(req);
-//
-//       if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
-//           res.statusCode = 401;
-//           res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
-//           return res.render('pages/forbidden');
-//       } else {
-//           next();
-//       }
-//   });
-// }
+if(process.env.NODE_ENV !== 'development'){
+  app.use(function(req, res, next){
+      var user = auth(req);
+
+      if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
+          res.statusCode = 401;
+          res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
+          return res.render('pages/forbidden');
+      } else {
+          next();
+      }
+  });
+}
 
 app.get('/*', (req, res) => {
   res.render('pages/index');
