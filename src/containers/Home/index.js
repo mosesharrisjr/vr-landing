@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './styles.scss';
 
+import {PropTypes} from "react-metrics";
+
 import { connect } from 'react-redux';
 import { getVideos, updateVideos } from '../../actions/videos';
 import { getWatch, updateWatch } from '../../actions/watch';
@@ -16,18 +18,28 @@ import OnVisible, { setDefaultProps } from 'react-on-visible';
 
 class Home extends BaseComponent {
 
+  static contextTypes = {
+    metrics: PropTypes.metrics
+  };
+
   constructor(props) {
     super(props);
-    this._bind('videoHandler')
+    this._bind('videoHandler','clickHandler')
   }
 
   componentDidMount(){
       this.props.getVideos();
       this.props.getWatch();
+
+      this.context.metrics.pageView(this.props.location.pathname);
   }
 
   videoHandler(slug){
     //console.log(slug);
+  }
+
+  clickHandler(type){
+    this.context.metrics.track(type,);
   }
 
   render() {
@@ -55,9 +67,9 @@ class Home extends BaseComponent {
                 <h2>Get the ultimate VR experience.</h2>
                 <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
                 <div className={styles.buttons}>
-                  <div className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
-                  <div className={styles.button}><img src="/images/googlePlay.svg" /></div>
-                  <div className={styles.button}><img src="/images/samsungGear.svg" /></div>
+                  <div onClick={() => this.clickHandler('iTunes App Button')} className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
+                  <div onClick={() => this.clickHandler('Google Play App Button')} className={styles.button}><img src="/images/googlePlay.svg" /></div>
+                  <div onClick={() => this.clickHandler('Samsung Gear App Button')} className={styles.button}><img src="/images/samsungGear.svg" /></div>
                 </div>
             </div>
         </div>
@@ -83,7 +95,7 @@ class Home extends BaseComponent {
         {videos && videos.length > 0 &&
           videos.map((item,index) => {
             return(
-              <Link key={index} to={ '/site/video/' + item.slug }>
+              <Link onClick={()=>{clickHandler(item.title + ' Landing Page Section');}} key={index} to={ '/site/video/' + item.slug }>
                 <VideoSection data={item}/>
               </Link>
             );

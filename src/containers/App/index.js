@@ -3,16 +3,24 @@ import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'connected-react-router';
 import routes from '../../routes';
 
-const App = ({ history }) => {
-  return (
-    <ConnectedRouter history={history} location="hash">
-      {routes}
-    </ConnectedRouter>
-  );
+import {metrics} from 'react-metrics';
+import MetricsConfig from '../../../config/metrics/config';
+
+
+class App extends React.Component {
+
+  static propTypes = {
+    history: PropTypes.object,
+  };
+
+  render(){
+    return(
+      <ConnectedRouter history={this.props.history} location="hash">
+        {routes}
+      </ConnectedRouter>
+    );
+  }
+
 }
 
-App.propTypes = {
-  history: PropTypes.object,
-};
-
-export default App;
+export default metrics(MetricsConfig)(App);

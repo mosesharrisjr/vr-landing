@@ -8,6 +8,8 @@ import { getVideos, updateVideos, getVideo, updateVideo } from '../../actions/vi
 import { Route, Switch } from 'react-router';
 import { Link } from 'react-router-dom'
 
+import {PropTypes} from "react-metrics";
+
 import LearnMore from '../../components/LearnMore';
 import BaseComponent from '../../../custom_modules/react-base';
 
@@ -23,10 +25,16 @@ class Video extends BaseComponent {
     this._bind('thumbnailClick','playVideo')
   }
 
+  static contextTypes = {
+    metrics: PropTypes.metrics
+  };
+
   componentDidMount(){
       this.props.getVideo({slug: this.props.match.params.slug});
       this.props.getVideos();
       window.scroll(0,0);
+
+      this.context.metrics.pageView(this.props.location.pathname);
   }
 
   thumbnailClick(slug){
