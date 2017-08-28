@@ -5,17 +5,17 @@ import BaseComponent from '../../../custom_modules/react-base';
 
 const menuItems = [
   {
-    url: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fvr.delltechnologies.com&title=Dell%20Technologies%20Virtual%20Reality&summary=Experience%20transformational%20stories%20in%20Virtual%20Reality.',
+    url: 'https://www.linkedin.com/shareArticle?mini=true&url='+ encodeURIComponent(window.location) +'&title=Dell%20Technologies%20Virtual%20Reality&summary=Experience%20transformational%20stories%20in%20Virtual%20Reality.',
     image: 'linkedin.svg',
     content: null,
   },
   {
-    url: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvr.delltechnologies.com',
+    url: 'https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(window.location),
     image: 'facebook.svg',
     content: null,
   },
   {
-    url: 'https://twitter.com/intent/tweet?url=https%3A%2F%2Fvr.delltechnologies.com&text=Dell%20Technologies%20Virtual%20Reality&via=DellTech',
+    url: 'https://twitter.com/intent/tweet?url='+ encodeURIComponent(window.location) +'&text=Dell%20Technologies%20Virtual%20Reality&via=DellTech',
     image: 'twitter.svg',
     content: null,
   },
