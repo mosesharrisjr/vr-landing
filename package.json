@@ -6,7 +6,7 @@
   "scripts": {
     "webpack-watch": "./node_modules/webpack/bin/webpack.js -w",
     "express-server": "node ./index",
-    "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
