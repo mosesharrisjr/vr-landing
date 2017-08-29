@@ -9,9 +9,8 @@
   width: 100%;
   min-width: $min-width;
 
-  .desktop{
+  .contentWrapper{
     width: 100%;
-    display: flex;
 
     .content{
       padding: 40px 10% 40px 10%;
@@ -92,7 +91,8 @@
   }
 
   @media (max-width: $tablet-width){
-    .desktop{
+
+    .contentWrapper{
       .content{
         margin: 0;
         padding: 0;

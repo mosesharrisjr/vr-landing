@@ -28,7 +28,7 @@ class Footer extends BaseComponent {
 
     return(
       <div className={styles.footer}>
-        <div className={styles.desktop}>
+        <div className={styles.contentWrapper}>
           <div className={styles.content}>
             {logos &&
             <div className={styles.logos}>
