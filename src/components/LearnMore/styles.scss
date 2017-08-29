@@ -1,5 +1,6 @@
 @import 'Config/styles/colors';
 @import 'Config/styles/easings';
+@import 'Config/styles/config';
 
 .learnWrapper{
   display: flex;
@@ -11,6 +12,7 @@
   background-size: cover;
   transition: all .2s ease-in-out;
   cursor: pointer;
+  min-width: $min-width;
 
   &:hover{
     opacity: .6;

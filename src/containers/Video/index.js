@@ -46,8 +46,8 @@ class Video extends BaseComponent {
   }
 
   render() {
-    const video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
-    const videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
+    let video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
+    let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
 
     if (!video) {
       return (
@@ -74,7 +74,7 @@ class Video extends BaseComponent {
             </ul>
           </div>
 
-          {this.state.playing == false &&
+          {this.state.playing == false && video &&
             <div onClick={this.playVideo} className={styles.videoPane} style={
                   {
                     backgroundImage: 'url(/images/' + video.capture + ')',
@@ -93,8 +93,7 @@ class Video extends BaseComponent {
               </div>
             </div>
           }
-          {this.state.playing &&
-            <div>
+          {this.state.playing && video &&
               <iframe
                 ref={
                   node => node && setAttributes(node,
@@ -107,7 +106,6 @@ class Video extends BaseComponent {
                 }
                 className={"vb-iframe-player " + styles.videoPane }>
               </iframe>
-            </div>
           }
 
 

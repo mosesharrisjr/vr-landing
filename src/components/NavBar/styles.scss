@@ -1,5 +1,6 @@
 @import 'Config/styles/colors';
 @import 'Config/styles/easings';
+@import 'Config/styles/config';
 
 .navBar{
   background: $dark-grey;
@@ -7,6 +8,7 @@
   padding: 0 0 0 16px;
   font-size: 22px;
   display: flex;
+  min-width: $min-width;
 
   .mobile{
     display: flex;

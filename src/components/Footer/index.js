@@ -20,7 +20,11 @@ class Footer extends BaseComponent {
 
   render(){
 
-    let logos = (this.props.logos && this.props.logos.body) ? this.props.logos.body : null;
+    let logos;
+
+    if (this.props.logos && this.props.logos.body){
+      logos = this.props.logos.body;
+    }
 
     return(
       <div className={styles.footer}>
