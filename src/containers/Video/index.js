@@ -38,7 +38,7 @@ class Video extends BaseComponent {
   }
 
   thumbnailClick(slug){
-      window.location = '/site/video/' + slug;
+      window.location = '/site/' + slug;
   }
 
   playVideo(){

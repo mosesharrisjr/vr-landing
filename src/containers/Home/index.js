@@ -64,7 +64,7 @@ class Home extends BaseComponent {
               </div>
             </div>
             <div className={styles.download}>
-                <h2>Get the ultimate VR experience.</h2>
+                <h2>Get the ultimate streaming experience.</h2>
                 <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p>
                 <div className={styles.buttons}>
                   <div onClick={() => this.clickHandler('iTunes App Button')} className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
@@ -95,7 +95,7 @@ class Home extends BaseComponent {
         {videos && videos.length > 0 &&
           videos.map((item,index) => {
             return(
-              <Link onClick={()=>{clickHandler(item.title + ' Landing Page Section');}} key={index} to={ '/site/video/' + item.slug }>
+              <Link onClick={()=>{clickHandler(item.title + ' Landing Page Section');}} key={index} to={ '/site/' + item.slug }>
                 <VideoSection data={item}/>
               </Link>
             );

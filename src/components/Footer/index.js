@@ -23,7 +23,7 @@ class Footer extends BaseComponent {
     let logos;
 
     if (this.props.logos && this.props.logos.body){
-      logos = this.props.logos.body;
+      logos = this.props.logos.body ;
     }
 
     return(

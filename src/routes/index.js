@@ -13,7 +13,8 @@ const routes = (
     <NavBar />
     <Switch>
       <Route exact path='/site' component={Home}/>
-      <Route path='/site/video/:slug' component={Video}/>
+      <Route exact path='/site/Forums' component={Home}/>
+      <Route path='/site/:slug' component={Video}/>
       <Route path='*' component={NoMatch}/>
     </Switch>
     <Footer />
