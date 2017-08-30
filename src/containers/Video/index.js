@@ -30,8 +30,8 @@ class Video extends BaseComponent {
   };
 
   componentDidMount(){
-      this.props.getVideo({slug: this.props.match.params.slug});
       this.props.getVideos();
+      this.props.getVideo({slug: this.props.match.params.slug});
       window.scroll(0,0);
 
       this.context.metrics.pageView(this.props.location.pathname);
@@ -118,7 +118,7 @@ class Video extends BaseComponent {
           <div className={styles.watchMoreWrapper}>
             <h2>Watch more</h2>
             <div className={styles.thumbnails}>
-              {videos && video &&
+              {videos && video && videos.length > 1 &&
                 videos.map((thumb, index) => {
                   if(thumb.title !== video.title){
                     return (
