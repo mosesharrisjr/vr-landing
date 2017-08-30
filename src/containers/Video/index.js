@@ -49,6 +49,12 @@ class Video extends BaseComponent {
     let video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
     let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
 
+    console.log(videos);
+    console.log(video);
+
+    if(video)
+      console.log(videos.length);
+
     if (!video) {
       return (
         <div className={styles.videoWrapper}>
@@ -112,7 +118,7 @@ class Video extends BaseComponent {
           <div className={styles.watchMoreWrapper}>
             <h2>Watch more</h2>
             <div className={styles.thumbnails}>
-              {videos && video && videos.length > 1 &&
+              {videos && video &&
                 videos.map((thumb, index) => {
                   if(thumb.title !== video.title){
                     return (
