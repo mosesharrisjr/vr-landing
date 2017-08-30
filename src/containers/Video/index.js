@@ -30,8 +30,8 @@ class Video extends BaseComponent {
   };
 
   componentDidMount(){
-      this.props.getVideos();
       this.props.getVideo({slug: this.props.match.params.slug});
+      this.props.getVideos();
       window.scroll(0,0);
 
       this.context.metrics.pageView(this.props.location.pathname);

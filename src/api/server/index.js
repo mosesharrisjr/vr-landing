@@ -78,7 +78,7 @@ const API = {
       thumb: 'videoStills/ACLVR-534.jpg',
     },
   ],
-  getAllVideos: function() { return this.videos},
+  getAllVideos: function() {return this.videos},
   getOneVideo: function(slug) {
     const isVideo = v => v.slug === slug;
     return this.videos.find(isVideo);
