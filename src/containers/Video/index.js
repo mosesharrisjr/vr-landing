@@ -52,7 +52,7 @@ class Video extends BaseComponent {
     console.log(videos);
     console.log(video);
 
-    if(video)
+    if(videos)
       console.log(videos.length);
 
     if (!video) {
