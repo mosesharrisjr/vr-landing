@@ -1,27 +1,33 @@
 import React from 'react';
 import styles from './styles.scss'
 
+import {PropTypes} from "react-metrics";
+
 import BaseComponent from '../../../custom_modules/react-base';
 
 const menuItems = [
   {
     url: 'https://www.linkedin.com/shareArticle?mini=true&url='+ encodeURIComponent(window.location) +'&title=Dell%20Technologies%20Virtual%20Reality&summary=Experience%20transformational%20stories%20in%20Virtual%20Reality.',
     image: 'linkedin.svg',
+    type: 'LinkedIn Share Button',
     content: null,
   },
   {
     url: 'https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(window.location),
     image: 'facebook.svg',
+    type: 'Facebook Share Button',
     content: null,
   },
   {
     url: 'https://twitter.com/intent/tweet?url='+ encodeURIComponent(window.location) +'&text=Dell%20Technologies%20Virtual%20Reality&via=DellTech',
     image: 'twitter.svg',
+    type: 'Twitter Share Button',
     content: null,
   },
   {
     url: '',
     image: null,
+    type: 'Learn More Button',
     content: 'Learn More',
   }
 ];
@@ -34,16 +40,28 @@ class NavBar extends BaseComponent {
     this.state = {
       mobileMenu: false,
     };
-    this._bind('handleClick','toggleMobileMenu');
+    this._bind('handleClick','toggleMobileMenu','trackingHandler');
   }
+
+  static contextTypes = {
+    metrics: PropTypes.metrics
+  };
 
   toggleMobileMenu() {
     this.setState({ mobileMenu: !this.state.mobileMenu });
   }
 
-  handleClick(url){
-    console.log(url);
-    window.location = url;
+  handleClick(url,type){
+
+    if(type)
+      this.context.metrics.track(type,window.location.pathname);
+
+    //window.location = url;
+
+  }
+
+  trackingHandler(type){
+    this.context.metrics.track(type,);
   }
 
   render(){
@@ -82,7 +100,7 @@ class NavBar extends BaseComponent {
               {
                 menuItems.map((item,index) => {
                   return(
-                    <li key={index}><a target='_blank' href={item.url}>
+                    <li key={index}><a target='_blank' onClick={()=>{this.trackingHandler(item.type)}} href={item.url}>
                       {item.image &&
                         <img src={'/images/' + item.image} />
                       }
@@ -100,7 +118,7 @@ class NavBar extends BaseComponent {
           <ul>
             {menuItems.map((item,index) => {
               return (
-                <li key={index} onClick={() => {this.handleClick(item.url)}}>
+                <li key={index} onClick={() => {this.handleClick(item.url,item.type)}}>
                      {item.image &&
                        <img src={'/images/' + item.image} />
                      }

@@ -71,7 +71,7 @@ class Video extends BaseComponent {
           <div className={styles.breadCrumb}>
             <ul>
               <li><Link to='/site'>Home</Link></li>
-              <li>{video.title}</li>
+              <li>{video.breadcrumb}</li>
             </ul>
           </div>
 
