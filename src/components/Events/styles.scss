@@ -1,0 +1,141 @@
+@import 'Config/styles/colors';
+@import 'Config/styles/easings';
+@import 'Config/styles/config';
+
+.eventsWrapper{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 20% 40px 20%;
+  background: $white;
+
+  color: $dark-grey;
+
+  h2{
+    display: flex;
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  h3{
+    font-weight: normal;
+  }
+
+  .button{
+    background: #007db8;
+    font-size: 16px;
+    color: $white;
+    padding: 10px 14px;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+
+    &:hover{
+      background: #016898;
+    }
+  }
+
+}
+
+
+/*==================================
+ Tables
+================================== */
+.Rtable {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.RtableCell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.RtableCell > h1,
+.RtableCell > h2,
+.RtableCell > h3,
+.RtableCell > h4,
+.RtableCell > h5,
+.RtableCell > h6 {
+  margin: 0;
+}
+/* Table column sizing
+================================== */
+.Rtable2cols > .RtableCell {
+  width: 50%;
+}
+.Rtable3cols > .RtableCell {
+  width: 33.3%;
+}
+.Rtable4cols > .RtableCell {
+  width: 25%;
+}
+.Rtable5cols > .RtableCell {
+  width: 20%;
+}
+.Rtable6cols > .RtableCell {
+  width: 16.6%;
+}
+
+/* Apply styles
+================================== */
+.Rtable {
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+.RtableCell{
+  padding: 20px 20px 5px 20px;
+}
+
+.RtableCellHead{
+  font-weight: bold;
+}
+
+/* Responsive
+==================================== */
+@media all and (max-width: 500px) {
+
+  .eventsWrapper{
+    width: 90%;
+    padding: 40px 5%;
+  }
+
+  .RtableCell{
+    padding-left: 0;
+
+    &:nth-child(3n){
+      margin-bottom: 40px;
+    }
+  }
+
+  .RtableCollapse {
+    display: block;
+  }
+  .RtableCollapse > .RtableCell {
+    width: 100% !important;
+  }
+  .RtableCollapse > .RtableCellFoot {
+    margin-bottom: 1em;
+  }
+}
+.no-flexbox .Rtable {
+  display: block;
+}
+.no-flexbox .Rtable > .RtableCell {
+  width: 100%;
+}
+.no-flexbox .Rtable > .RtableCellFoot {
+  margin-bottom: 1em;
+}

@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 import LearnMore from '../../components/LearnMore';
 import VideoSection from '../../components/VideoSection';
+import Event from '../../components/Events';
 
 import BaseComponent from '../../../custom_modules/react-base';
 
@@ -101,6 +102,7 @@ class Home extends BaseComponent {
             );
           })}
         </div>
+        <Event />
         <LearnMore />
       </div>
     );

@@ -17,29 +17,33 @@
     display: flex;
     cursor: pointer;
 
-    .icon{
-      display: flex;
-      width: 47px;
-      height: 47px;
-      font-weight: 300;
-      font-size: 40px;
-      background: #007db8;
-      color: $white;
-      justify-content: center;
-      margin-right: 20px;
-      transition: all .2s ease-in-out;
-
-      &:hover{
-        background-color: #016898;
-      }
-    }
-
     .cta{
-      display: inline-block;
+      display: flex;
+      align-items: center;
       font-weight: 300;
       font-size: 16px;
       color: $dark-grey;
       align-self: center;
+
+      &::before{
+        content: '';
+        position: relative;
+        left: 0;
+        top: 0;
+        background: url(/images/icon-arrow.png) no-repeat 50% 50%/12px #007db8;
+        display: block;
+        width: 47px;
+        height: 47px;
+        transition: .2s ease all;
+        margin-right: 16px;
+      }
+
+      &:hover::before{
+        background-color: #016898;
+      }
+
+
+
     }
   }
 }
