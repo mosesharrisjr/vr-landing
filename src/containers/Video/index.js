@@ -87,7 +87,7 @@ class Video extends BaseComponent {
               </div>
               <div className={styles.blurb}>
                 <div className={styles.content}>
-                  <div className={styles.title}>{video.title}</div>
+                  <div className={styles.title}>{video.breadcrumb}</div>
                   <div className={styles.description} dangerouslySetInnerHTML={{__html: video.description}}>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ class Video extends BaseComponent {
                         <img src={'/images/' + thumb.thumb} />
                         <div className={styles.titleWrapper}>
                             <div className={styles.title}>
-                              {thumb.title}
+                              {thumb.breadcrumb}
                             </div>
                         </div>
                       </div>
