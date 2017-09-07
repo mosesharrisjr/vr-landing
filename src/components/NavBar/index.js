@@ -40,7 +40,7 @@ class NavBar extends BaseComponent {
     this.state = {
       mobileMenu: false,
     };
-    this._bind('handleClick','toggleMobileMenu','trackingHandler');
+    this._bind('toggleMobileMenu','trackingHandler');
   }
 
   static contextTypes = {
@@ -49,15 +49,6 @@ class NavBar extends BaseComponent {
 
   toggleMobileMenu() {
     this.setState({ mobileMenu: !this.state.mobileMenu });
-  }
-
-  handleClick(url,type){
-
-    if(type)
-      this.context.metrics.track(type,window.location.pathname);
-
-    //window.location = url;
-
   }
 
   trackingHandler(type){
@@ -78,7 +69,7 @@ class NavBar extends BaseComponent {
       <div className={styles.navBar}>
         <div className={styles.mobile}>
           <div className={styles.contentLeft}>
-            <img src="/images/dell_technologies.svg" />
+            <a href='//www.delltechnologies.com'><img src="/images/dell_technologies.svg" /></a>
           </div>
           <div className={styles.contentRight}>
             <div onClick={this.toggleMobileMenu}>
@@ -92,7 +83,7 @@ class NavBar extends BaseComponent {
         </div>
         <div className={styles.desktop}>
           <div className={styles.contentLeft}>
-            <img src="/images/dell_technologies.svg" />
+            <a href='//www.delltechnologies.com'><img src="/images/dell_technologies.svg" /></a>
           </div>
           <div className={styles.contentRight}>
 
@@ -118,14 +109,14 @@ class NavBar extends BaseComponent {
           <ul>
             {menuItems.map((item,index) => {
               return (
-                <li key={index} onClick={() => {this.handleClick(item.url,item.type)}}>
+                <li key={index}><a target='_blank' onClick={() => {this.trackingHandler(item.type)}} href={item.url}>
                      {item.image &&
                        <img src={'/images/' + item.image} />
                      }
                      {item.content &&
                      item.content
                      }
-                </li>
+                </a></li>
               );
             })}
           </ul>

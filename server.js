@@ -35,7 +35,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('pages/placeholder');
+  res.render('pages/index');
 });
 
 app.get('/api/video/:slug', (req, res) => {
@@ -53,21 +53,6 @@ app.get('/api/logos', (req, res) => {
 app.get('/api/watch', (req, res) => {
   ServerResponse.success(res, JSON.stringify(API.getAllWatch()));
 });
-
-
-if(process.env.NODE_ENV !== 'development'){
-  app.use(function(req, res, next){
-      var user = auth(req);
-
-      if (user === undefined || user['name'] !== process.env.USERNAME || user['pass'] !== process.env.PASSWORD) {
-          res.statusCode = 401;
-          res.setHeader('WWW-Authenticate', 'Basic realm="NodeJS"');
-          return res.render('pages/forbidden');
-      } else {
-          next();
-      }
-  });
-}
 
 app.get('/*', (req, res) => {
   res.render('pages/index');

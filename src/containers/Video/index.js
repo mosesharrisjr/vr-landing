@@ -38,7 +38,7 @@ class Video extends BaseComponent {
   }
 
   thumbnailClick(slug){
-      window.location = '/site/' + slug;
+      window.location = '/' + slug;
   }
 
   playVideo(){
@@ -70,7 +70,7 @@ class Video extends BaseComponent {
           <div className={styles.wrangler}>
           <div className={styles.breadCrumb}>
             <ul>
-              <li><Link to='/site'>Home</Link></li>
+              <li><Link to='/'>Home</Link></li>
               <li>{video.breadcrumb}</li>
             </ul>
           </div>

@@ -8,7 +8,7 @@
   padding: 0 0 0 16px;
   font-size: 22px;
   display: flex;
-  min-width: $min-width;
+  min-width: calc(#{$min-width} - 16px);
 
   .mobile{
     display: flex;
@@ -115,6 +115,15 @@
       white-space: nowrap;
     }
 
+    a {
+      text-decoration: none;
+      color: $white;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    
     a:hover {
       font-weight: 700;
     }
@@ -178,6 +187,11 @@
 
   .contentLeft{
     display: flex;
+
+    a{
+      display: flex;
+    }
+
     img {
       transition:
         width 200ms $ease-out-expo;

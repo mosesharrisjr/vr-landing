@@ -18,7 +18,7 @@
 
 .videoWrapper{
   min-height: 100vh;
-  min-width: $min-width;
+  min-width: calc(#{$min-width} - 4%);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,6 @@
   }
 
   .videoPane{
-    min-width: 320px;
     min-height: 180px;
     height:100vh;
     width: 100%;

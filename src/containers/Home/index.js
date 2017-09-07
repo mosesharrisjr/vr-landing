@@ -96,7 +96,7 @@ class Home extends BaseComponent {
         {videos && videos.length > 0 &&
           videos.map((item,index) => {
             return(
-              <Link onClick={()=>{clickHandler(item.title + ' Landing Page Section');}} key={index} to={ '/site/' + item.slug }>
+              <Link onClick={()=>{clickHandler(item.title + ' Landing Page Section');}} key={index} to={ '/' + item.slug }>
                 <VideoSection data={item}/>
               </Link>
             );

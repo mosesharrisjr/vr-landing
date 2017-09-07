@@ -72,12 +72,18 @@
     background-position: 67% 0%;
 
     .playButton{
-      display: none;
+      align-self: flex-end;
+      margin-right: 0;
+      margin: 0 0 25px 0;
     }
 
     .blurb{
       width: 47%;
       max-width: none;
+
+      .content{
+        padding: 20px 0 100px 40px;
+      }
     }
   }
 }
