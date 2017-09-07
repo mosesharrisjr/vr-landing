@@ -97,6 +97,7 @@
     .blurb{
       position: absolute;
       bottom: 0;
+      left: 0;
       color: $white;
       background: rgba($dark-grey, .4);
       width: 94%;
@@ -159,7 +160,8 @@
 
         .titleWrapper{
           position: absolute;
-          align-self: flex-end;
+          bottom: 0;
+          left: 0;
           color: $white;
           background: rgba($dark-grey, .4);
           padding: 20px 3%;
