@@ -51,7 +51,7 @@ const API = {
   videos: [
     {
       slug: 'OTTOMotors',
-      id: 'e469893e1ac915776cb0ce9b8ec4545e',
+      id: 'bdc2b0ddf670cd48b14c5d7dce3c612e',
       title: 'Accelerate Change',
       breadcrumb: 'Accelerate: OTTO Motors Experience',
       description: 'OTTO Motors designs and manufactures autonomous robotic solutions for industrial use. <br/><br/>See how Dell Technologies is facilitating the necessary communications signals for  their self-driving vehicles.',
@@ -72,7 +72,7 @@ const API = {
     },
     {
       slug: 'ACL',
-      id: '86f41cc488d9162475ccb4e92c398d08',
+      id: '0380c7001dcb9794b65b1c5ad241c593',
       title: 'Rock Out Backstage',
       breadcrumb: 'Austin City Limits: Backstage Tour',
       description: 'The longest-running music television series, Austin City Limits is shot at the ACL Moody Theater and powered by Dell Technologies. Go behind the scenes of this cutting-edge music venue.',

@@ -16,7 +16,7 @@ class LearnMore extends BaseComponent {
       <div className={styles.learnWrapper}>
           <div className={styles.link}>
             {/* <div className={styles.icon}>›</div> */}
-            <div className={styles.cta}>Learn More</div>
+            <a href='https://marketing.dell.com/en/vr' target='_blank'><div className={styles.cta}>Learn More</div></a>
           </div>
       </div>
     );

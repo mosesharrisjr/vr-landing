@@ -24,12 +24,12 @@ const menuItems = [
     type: 'Twitter Share Button',
     content: null,
   },
-  // {
-  //   url: '',
-  //   image: null,
-  //   type: 'Learn More Button',
-  //   content: 'Learn More',
-  // }
+  {
+    url: 'https://marketing.dell.com/en/vr',
+    image: null,
+    type: 'Learn More Button',
+    content: 'Learn More',
+  }
 ];
 
 

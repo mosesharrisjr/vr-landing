@@ -134,7 +134,7 @@ class Video extends BaseComponent {
           </div>
           </div>
         </div>
-        {/* <LearnMore /> */}
+        <LearnMore />
       </div>
     );
 

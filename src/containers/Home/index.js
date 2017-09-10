@@ -72,6 +72,7 @@ class Home extends BaseComponent {
                   <div onClick={() => this.clickHandler('iTunes App Button')} className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
                   <div onClick={() => this.clickHandler('Google Play App Button')} className={styles.button}><img src="/images/googlePlay.svg" /></div>
                   <div onClick={() => this.clickHandler('Samsung Gear App Button')} className={styles.button}><img src="/images/samsungGear.svg" /></div>
+                  <p>COMING SOON</p>
                 </div>
             </div>
         </div>
@@ -104,7 +105,7 @@ class Home extends BaseComponent {
           })}
         </div>
         <Event />
-        {/* <LearnMore /> */}
+        <LearnMore />
       </div>
     );
   }

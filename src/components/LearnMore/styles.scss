@@ -17,6 +17,10 @@
     display: flex;
     cursor: pointer;
 
+    a {
+      text-decoration: none;
+    }
+
     .cta{
       display: flex;
       align-items: center;
