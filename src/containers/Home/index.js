@@ -39,8 +39,16 @@ class Home extends BaseComponent {
     //console.log(slug);
   }
 
-  clickHandler(type){
+  clickHandler(type,location){
     this.context.metrics.track(type,);
+
+    var href='';
+
+    if(location == 'google')
+      href = 'https://play.google.com/store/apps/details?id=tech.d3live.vrplayer.cardboard&hl=en';
+
+    window.open(href, '_blank');
+
   }
 
   render() {
@@ -69,12 +77,15 @@ class Home extends BaseComponent {
                 {/* <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p> */}
                 <p>While these videos can be viewed in multiple ways, for an optimal experience, soon you'll be able to download our Dell Technologies VR app.</p>
                 <div className={styles.buttons}>
-                  <div onClick={() => this.clickHandler('iTunes App Button')} className={styles.button}><img src="/images/itunesAppStore.svg" /></div>
-                  <div onClick={() => this.clickHandler('Google Play App Button')} className={styles.button}><img src="/images/googlePlay.svg" /></div>
-                  <div onClick={() => this.clickHandler('Samsung Gear App Button')} className={styles.button}><img src="/images/samsungGear.svg" /></div>
+                  {/* <div onClick={() => this.clickHandler('iTunes App Button')} className={styles.button}><img src="/images/itunesAppStore.svg" /></div> */}
+                  <div onClick={() => {
+                      this.clickHandler('Google Play App Button','google');
+
+                    }} className={styles.button}><img src="/images/googlePlay.svg" /></div>
+                  {/* <div onClick={() => this.clickHandler('Samsung Gear App Button')} className={styles.button}><img src="/images/samsungGear.svg" /></div> */}
                 </div>
-                <br/><br/>
-                <p style={{fontSize:'16px'}}>COMING SOON</p>
+                {/* <br/><br/>
+                <p style={{fontSize:'16px'}}>COMING SOON</p> */}
             </div>
         </div>
         {watch &&
