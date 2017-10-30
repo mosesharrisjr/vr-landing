@@ -75,7 +75,7 @@ class Home extends BaseComponent {
             <div className={styles.download}>
                 <h2>Get the ultimate streaming experience.</h2>
                 {/* <p>These videos can be viewed in multiple ways, but for the optimal experience, please download our Dell Technologies VR app.</p> */}
-                <p>While these videos can be viewed in multiple ways, for an optimal experience, soon you'll be able to download our Dell Technologies VR app.</p>
+                <p>While these videos can be viewed in multiple ways, for an optimal experience, download our Dell Technologies VR app.</p>
                 <div className={styles.buttons}>
                   {/* <div onClick={() => this.clickHandler('iTunes App Button')} className={styles.button}><img src="/images/itunesAppStore.svg" /></div> */}
                   <div onClick={() => {
