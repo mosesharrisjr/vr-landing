@@ -116,7 +116,7 @@ class Home extends BaseComponent {
             );
           })}
         </div>
-        <Event />
+        {/* <Event /> */}
         <LearnMore />
       </div>
     );
