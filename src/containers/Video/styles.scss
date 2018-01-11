@@ -147,6 +147,7 @@
         display: flex;
         position: relative;
         cursor: pointer;
+        margin-right: 10%;
 
         img {
           display: flex;
@@ -154,8 +155,8 @@
           height: 100%;
         }
 
-        &:first-child{
-          margin-right: 10%;
+        &:last-child{
+          margin-right: 0;
         }
 
         .titleWrapper{
