@@ -83,8 +83,8 @@ const API = {
     {
       slug: 'ColumbiaVR',
       id: 'ac39b9436d83c3224bb678527befcdfd',
-      title: 'Real Toughness, Real Results',
-      breadcrumb: 'Real Toughness, Real Results: An IT Transformation Story',
+      title: 'Real Toughness, Real Results: An IT Transformation Story',
+      breadcrumb: 'IT Transformation Story',
       description: 'Columbia Sportswear has partnered with Dell EMC on a successful IT Transformation. Their IT Transformation journey has included the Modernization of their infrastructure, the Automation of service delivery, and the holistic Transformation of the people & processes. Columbia’s IT Transformation, enabled by Dell EMC, is a critical step in their Digital Transformation with Dell Technologies.',
       background: 'videoStills/COLUMBIAVR-1440.jpg',
       capture: 'videoStills/COLUMBIAVR-1366.jpg',
