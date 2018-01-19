@@ -177,6 +177,20 @@
     }
   }
 
+  @media (max-width: $tablet-width){
+    .watchMoreWrapper{
+      .thumbnails{
+        .thumbnail{
+          .titleWrapper{
+            .title{
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: $mobile-width){
     .videoPane{
       height: calc(.5625 * 100vw);
@@ -213,9 +227,17 @@
           display: flex;
           position: relative;
 
-          &:first-child{
-            margin-right: 0;
-            margin-bottom: 60px;
+          margin-right: 0;
+          margin-bottom: 60px;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+
+          .titleWrapper{
+            .title{
+              font-size: 33px;
+            }
           }
 
         }
