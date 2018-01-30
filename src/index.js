@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'babel-polyfill';
 import App from './containers/App';
 import { createBrowserHistory, createHashHistory } from 'history';
 import { Provider } from 'react-redux';
