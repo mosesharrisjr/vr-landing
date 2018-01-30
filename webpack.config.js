@@ -2,7 +2,7 @@ const { resolve } = require('path');
 let webpack = require('webpack');
 
 module.exports = {
-  entry: __dirname + '/src/index.js',
+  entry: ['babel-polyfill',__dirname + '/src/index.js'],
   output: {
     path: __dirname + '/public/lib',
     filename: 'bundle.js',
@@ -11,7 +11,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify("development") 
+        NODE_ENV: JSON.stringify("development")
       }
     })
   ],
