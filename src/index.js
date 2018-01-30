@@ -1,4 +1,6 @@
 import 'babel-polyfill';
+import Promise from 'promise-polyfill';
+import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';

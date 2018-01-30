@@ -52,51 +52,8 @@ class Home extends BaseComponent {
   }
 
   render() {
-     let videoTest = [
-       {
-         slug: 'OTTOMotors',
-         id: 'bdc2b0ddf670cd48b14c5d7dce3c612e',
-         title: 'Accelerate Change',
-         breadcrumb: 'Accelerate: OTTO Motors Experience',
-         description: 'OTTO Motors designs and manufactures autonomous robotic solutions for industrial use. <br/><br/>See how Dell Technologies is facilitating the necessary communications signals for  their self-driving vehicles.',
-         background: 'videoStills/OTTOVR-1440.jpg',
-         capture: 'videoStills/OTTOVR-1366.jpg',
-         thumb: 'videoStills/OTTOVR-534.jpg',
 
-       },
-       {
-         slug: 'LonelyWhale',
-         id: '55157e8cb8a93f99fa0a87d306824380',
-         title: 'Swim with Whales',
-         breadcrumb: 'Cry Out: The Lonely Whale Experience',
-         description: 'Dell and Lonely Whale Foundation are doing their part to protect the seas by intercepting plastic before it enters our oceans and putting it to use in Dell product packaging.',
-         background: 'videoStills/TLW-1440.jpg',
-         capture: 'videoStills/TLW-1366.jpg',
-         thumb: 'videoStills/TLW-534.jpg',
-       },
-       {
-         slug: 'ACL',
-         id: 'f9a6b7abb124def7888b6ee8866aa570',
-         title: 'Rock Out Backstage',
-         breadcrumb: 'Austin City Limits: Backstage Tour',
-         description: 'The longest-running music television series, Austin City Limits is shot at the ACL Moody Theater and powered by Dell Technologies. Go behind the scenes of this cutting-edge music venue.',
-         background: 'videoStills/ACLVR-1440.jpg',
-         capture: 'videoStills/ACLVR-1366.jpg',
-         thumb: 'videoStills/ACLVR-534.jpg',
-       },
-       {
-         slug: 'ColumbiaVR',
-         id: 'ac39b9436d83c3224bb678527befcdfd',
-         title: 'Real Toughness, Real Results',
-         breadcrumb: 'An IT Transformation Story',
-         description: 'Having the right gear for the job is crucial. Columbia’s IT Transformation with Dell EMC has brought them to the forefront of 3-D design, enabling better fitting gear that is ready for any task.',
-         background: 'videoStills/COLUMBIAVR-1440.jpg',
-         capture: 'videoStills/COLUMBIAVR-1366.jpg',
-         thumb: 'videoStills/COLUMBIAVR-534.jpg',
-       },
-     ];
-
-     let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : videoTest;
+     let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
      let watch = (this.props.watch && this.props.watch.body) ? this.props.watch.body : null;
 
      setDefaultProps({

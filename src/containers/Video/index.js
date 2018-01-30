@@ -46,6 +46,7 @@ class Video extends BaseComponent {
   }
 
   render() {
+    
     let video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
     let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
 
