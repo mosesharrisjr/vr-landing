@@ -212,13 +212,17 @@
 
   @media (max-width: $mobile-width){
     .desktop{
-      display: none;
+      position: absolute !important;
+      top: -9999px !important;
+      left: -9999px !important;
     }
   }
 
   @media (min-width: $mobile-width){
     .mobile{
-      display: none;
+      position: absolute !important;
+      top: -9999px !important;
+      left: -9999px !important;
     }
   }
 
