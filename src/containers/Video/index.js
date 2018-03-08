@@ -77,13 +77,13 @@ class Video extends BaseComponent {
           </div>
 
           {this.state.playing == false && video &&
-            <div onClick={this.playVideo} className={styles.videoPane} style={
+            <div className={styles.videoPane} style={
                   {
                     backgroundImage: 'url(/images/' + video.capture + ')',
                     backgroundRepeat: 'no-repeat',
                   }
                 }>
-              <div className={styles.playButton}>
+              <div onClick={this.playVideo} className={styles.playButton}>
                 <img src="/images/playButton-white.svg"/>
               </div>
               <div className={styles.blurb}>
@@ -92,7 +92,7 @@ class Video extends BaseComponent {
                   <div className={styles.description} dangerouslySetInnerHTML={{__html: video.description}}>
                   </div>
                 </div>
-                <div className={(video.download) ? styles.download : styles.hide}><a href={video.download} download={video.slug}>Download</a></div>
+                <div className={(video.download) ? styles.download : styles.hide}><a href={video.download} download={video.slug}>Download Desktop VR App</a></div>
               </div>
             </div>
           }
