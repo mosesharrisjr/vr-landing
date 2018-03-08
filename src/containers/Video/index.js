@@ -46,7 +46,7 @@ class Video extends BaseComponent {
   }
 
   render() {
-    
+
     let video = (this.props.video && this.props.video.body) ? this.props.video.body : null;
     let videos = (this.props.videos && this.props.videos.body) ? this.props.videos.body : null;
 
@@ -92,6 +92,7 @@ class Video extends BaseComponent {
                   <div className={styles.description} dangerouslySetInnerHTML={{__html: video.description}}>
                   </div>
                 </div>
+                <div className={(video.download) ? styles.download : styles.hide}><a href={video.download} download={video.slug}>Download</a></div>
               </div>
             </div>
           }
@@ -109,7 +110,6 @@ class Video extends BaseComponent {
                 className={"vb-iframe-player " + styles.videoPane }>
               </iframe>
           }
-
 
           <div className={styles.watchMoreWrapper}>
             <h2>Watch more</h2>

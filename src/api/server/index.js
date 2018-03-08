@@ -69,6 +69,7 @@ const API = {
       background: 'videoStills/TLW-1440.jpg',
       capture: 'videoStills/TLW-1366.jpg',
       thumb: 'videoStills/TLW-534.jpg',
+      download: 'https://s3.us-east-2.amazonaws.com/vrlanding/lonely-whale/TheLonelyWhale.zip',
     },
     {
       slug: 'ACL',

@@ -62,6 +62,38 @@
     }
   }
 
+  .hide{
+    display:none;
+  }
+
+  .download{
+    //width: 92%;
+    //padding: 4%;
+    //text-align: center;
+    //margin: 0 0 60px 0;
+    //display: flex;
+    //justify-content: center;
+    position: absolute;
+    right: 5%;
+    bottom: 29%;
+    
+    a{
+      color: #FFF;
+      text-decoration: none;
+      background-color: #007db8;
+      transition: all 0.5s ease;
+      padding: 12px 32px;
+      width: fit-content;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 27px;
+
+      &:hover{
+        background-color: $blue2;
+      }
+    }
+  }
+
   .videoPane{
     min-height: 180px;
     height:100vh;
