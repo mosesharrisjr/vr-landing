@@ -104,6 +104,7 @@ class Video extends BaseComponent {
                     appid:"70d567ea0e05e5dd13fa84e7b34c311f",
                     vuuid: video.id,
                     allowfullscreen: "true",
+                    allow: "gyroscope; accelerometer; xr",
                     webkitallowfullscreen: "true"
                   })
                 }
